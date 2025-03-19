@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "../button";
 
 export const Navbar = () => {
     const navLinks = [
@@ -17,8 +18,8 @@ export const Navbar = () => {
                 <ul className="flex gap-10">
                     {
                         navLinks.map((link, i) => (
-                            <li className="" key={i}>
-                                <Link to={link.link}>{link.name}</Link>
+                            <li className="transition-all duration-150 hover:text-gold hover:-translate-y-1" key={i}>
+                                <Link to={link.link} className="">{link.name}</Link>
                                 {/* <a href={link.link}>{link.name}</a> */}
                             </li>
                         ))
@@ -27,14 +28,19 @@ export const Navbar = () => {
             </section>
             {/* ==== LOGO ==== */}
             <section>
-                <h3>
+                <h3 className="flex flex-col uppercase text-xl">
                     <span>inks &</span>
-                    <span>{" "}pixels</span>
+                    <span className="text-gold">{" "}pixels</span>
                 </h3>
             </section>
             {/* ==== CONTACT ==== */}
             <section>
-                <button>Contact</button>
+                <Button
+                    size="sm"
+                    variant="primary"
+                >
+                    Contact
+                </Button>
             </section>
         </nav>
 
