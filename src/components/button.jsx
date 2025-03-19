@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Button = ({ children, size, className, href, variant }) => {
     const sizeClass = {
-        sm: "px-4 py-[8px]",
+        sm: "px-4 py-[7px]",
         md: "px-6 py-[23px]"
     };
 

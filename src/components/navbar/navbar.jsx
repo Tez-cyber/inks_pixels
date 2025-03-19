@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "../button";
+import { useState } from "react";
+import { MobileNavbar } from "./mobileNavbar";
 
 export const Navbar = () => {
+    const [openNav, setOpenNav] = useState(false)
     const navLinks = [
         { name: "Home", link: "/" },
         { name: "About", link: "/about" },
@@ -14,14 +17,12 @@ export const Navbar = () => {
             `}
         >
             {/* Nav links */}
-            <section className="">
+            <section className="hidden md:block">
                 <ul className="flex gap-10">
                     {
                         navLinks.map((link, i) => (
-                            <li className="transition-all duration-150 hover:text-gold hover:-translate-y-1" key={i}>
-                                <Link to={link.link} className="">{link.name}</Link>
-                                {/* <a href={link.link}>{link.name}</a> */}
-                            </li>
+                            <li className="transition-all duration-150 font-semibold hover:text-gold hover:-translate-y-1" key={i}>
+                                <Link to={link.link} className="">{link.name}</Link>                            </li>
                         ))
                     }
                 </ul>
@@ -34,13 +35,28 @@ export const Navbar = () => {
                 </h3>
             </section>
             {/* ==== CONTACT ==== */}
-            <section>
+            <section className="hidden md:block">
                 <Button
                     size="sm"
                     variant="primary"
                 >
                     Contact
                 </Button>
+            </section>
+
+            {/* ==== MOBILE NAVBAR ==== */}
+            <section className="md:hidden">
+                <Button
+                    size="sm"
+                    variant="primary"
+                >
+                    {
+                        openNav ? "close" : "menu"
+                    }
+                </Button>
+                {
+                    openNav && <MobileNavbar />
+                }
             </section>
         </nav>
 
