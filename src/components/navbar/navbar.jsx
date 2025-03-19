@@ -18,8 +18,8 @@ export const Navbar = () => {
                     {
                         navLinks.map((link, i) => (
                             <li className="" key={i}>
-                                {/* <Link to={link.link}>{link.name}</Link> */}
-                                <a href={link.link}>{link.name}</a>
+                                <Link to={link.link}>{link.name}</Link>
+                                {/* <a href={link.link}>{link.name}</a> */}
                             </li>
                         ))
                     }
@@ -29,7 +29,7 @@ export const Navbar = () => {
             <section>
                 <h3>
                     <span>inks &</span>
-                    <span>pixels</span>
+                    <span>{" "}pixels</span>
                 </h3>
             </section>
             {/* ==== CONTACT ==== */}

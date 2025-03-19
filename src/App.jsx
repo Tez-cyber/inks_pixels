@@ -1,4 +1,5 @@
 import { Navbar } from "./components/navbar/navbar"
+import { Routes, Route } from "react-router-dom"
 
 function App() {
 
@@ -6,7 +7,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <div>This is App</div>
+      {/* <Routes>
+
+      </Routes> */}
     </>
   )
 }
