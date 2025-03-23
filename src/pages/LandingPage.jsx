@@ -1,7 +1,10 @@
+import { JumbotronSection } from "../components/landing/jumbotronSection"
 
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <section>
+        <JumbotronSection />
+    </section>
   )
 }
 
