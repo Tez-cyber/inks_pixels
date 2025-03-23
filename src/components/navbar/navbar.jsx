@@ -49,7 +49,7 @@ export const Navbar = () => {
                     size="sm"
                     variant="primary"
                     className={`z-10`}
-                    onNavClick={handleMenuClick}
+                    onClick={handleMenuClick}
                 >
                     {
                         openNav ? "close" : "menu"

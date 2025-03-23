@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 
-export const Button = ({ children, size, className, href, variant, onNavClick }) => {
+export const Button = ({ children, size, className, href, variant, onClick }) => {
     const sizeClass = {
         sm: "px-4 py-[7px]",
-        md: "px-6 py-[23px]"
+        md: "px-6 py-[13px]"
     };
 
     const colorVariants = {
@@ -22,7 +22,7 @@ export const Button = ({ children, size, className, href, variant, onNavClick })
                 ${colorVariants[variant]}
                 ${className}
             `}
-            onClick={onNavClick}
+            onClick={onClick}
         >
             {children}
         </Link>
