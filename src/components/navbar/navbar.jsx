@@ -10,6 +10,9 @@ export const Navbar = () => {
         { name: "About", link: "/about" },
         { name: "Services", link: "/services" }
     ]
+    const handleMenuClick = () => {
+        setOpenNav(!openNav)
+    }
     return (
         <nav
             className={`bg-darkBlue px-20 sticky flex items-center
@@ -49,6 +52,8 @@ export const Navbar = () => {
                 <Button
                     size="sm"
                     variant="primary"
+                    className={`z-10`}
+                    onNavClick={handleMenuClick}
                 >
                     {
                         openNav ? "close" : "menu"
