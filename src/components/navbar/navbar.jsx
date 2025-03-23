@@ -2,14 +2,10 @@ import { Link } from "react-router-dom";
 import { Button } from "../button";
 import { useState } from "react";
 import { MobileNavbar } from "./mobileNavbar";
+import { navLinks } from "../../utils";
 
 export const Navbar = () => {
     const [openNav, setOpenNav] = useState(false)
-    const navLinks = [
-        { name: "Home", link: "/" },
-        { name: "About", link: "/about" },
-        { name: "Services", link: "/services" }
-    ]
     const handleMenuClick = () => {
         setOpenNav(!openNav)
     }
@@ -60,7 +56,9 @@ export const Navbar = () => {
                     }
                 </Button>
                 {
-                    openNav && <MobileNavbar />
+                    openNav && <MobileNavbar
+                        onCloseNav={handleMenuClick}
+                    />
                 }
             </section>
         </nav>
