@@ -12,12 +12,13 @@ import gridImage6 from '../../assets/img-1.jpg'; // Replace with your grid image
 import { Button } from '../button';
 
 export const JumbotronSection = () => {
+    const imgStyle = 'mb-6 h-[340px] w-[319.25px] rounded-3xl border'
 
     return (
         <section className='bg-darkBlue w-full h-screen flex items-center'>
-            <div className="px-20 flex">
+            <div className="px-20 flex items-center bg-red-200 w-full overflow-hidden">
                 {/* ====== Description section ====== */}
-                <div className='w-[656px] text-white flex flex-col gap-6'>
+                <div className=' text-white flex flex-col gap-6 w-[50%]'>
                     <h1 className="text-[56px] leading-tight">
                         Empowering Your Brand with
                         <span className='ml-3 text-gold'>Creative Excellence</span>
@@ -43,8 +44,33 @@ export const JumbotronSection = () => {
                     </div>
                 </div>
                 {/* ===== Image Section */}
-                <div>
-                    Image section
+                <div className='bg-white w-[50%] flex justify-center'>
+                    <div className='grid grid-cols-2 gap-6'>
+                        {/* ==== First grid ==== */}
+                        <div>
+                            <div className=''>
+                                <img className={`${imgStyle}`} src={gridImage1} alt="gridImage1" />
+                            </div>
+                            <div className=''>
+                                <img className={`${imgStyle}`} src={gridImage1} alt="gridImage1" />
+                            </div>
+                            <div className=''>
+                                <img className={`${imgStyle}`} src={gridImage1} alt="gridImage1" />
+                            </div>
+                        </div>
+                        {/* ==== Second grid ==== */}
+                        <div>
+                            <div className=''>
+                                <img className={`${imgStyle}`} src={gridImage1} alt="gridImage1" />
+                            </div>
+                            <div className=''>
+                                <img className={`${imgStyle}`} src={gridImage1} alt="gridImage1" />
+                            </div>
+                            <div className=''>
+                                <img className={`${imgStyle}`} src={gridImage1} alt="gridImage1" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
