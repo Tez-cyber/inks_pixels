@@ -2,20 +2,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Import your images
-import gridImage1 from '../../assets/img-1.jpg'; 
-import gridImage2 from '../../assets/img-2.jpg'; 
+import gridImage1 from '../../assets/img-1.jpg';
+import gridImage2 from '../../assets/img-2.jpg';
 import gridImage3 from '../../assets/img-3.webp';
 import gridImage4 from '../../assets/img-4.jpg';
 import gridImage5 from '../../assets/img-5.jpg';
 import gridImage6 from '../../assets/img-7.jpg';
 import { Button } from '../button';
+import { Container } from '../container';
 
 export const JumbotronSection = () => {
     const imgStyle = 'mb-6 h-[300px] w-[319.25px] rounded-3xl object-cover'
 
     return (
         <section className='bg-darkBlue w-full h-full flex items-center overflow-hidden md:h-screen'>
-            <div className="px-20 flex flex-col items-center w-full md:flex-row">
+            <Container className="flex flex-col items-center w-full md:flex-row">
                 {/* ====== Description section ====== */}
                 <div className=' text-white flex flex-col gap-6 md:w-[50%]'>
                     <h1 className="text-[54px] leading-tight md:text-[54px  ]">
@@ -72,7 +73,7 @@ export const JumbotronSection = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };
