@@ -1,4 +1,5 @@
 import { AboutSection } from "../components/landing/aboutSection"
+import { InnovateSection } from "../components/landing/innovateSection"
 import { JumbotronSection } from "../components/landing/jumbotronSection"
 
 const LandingPage = () => {
@@ -6,6 +7,7 @@ const LandingPage = () => {
     <section className="">
         <JumbotronSection />
         <AboutSection />
+        <InnovateSection />
     </section>
   )
 }
