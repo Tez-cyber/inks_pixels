@@ -1,7 +1,33 @@
-import { Container } from "../container"
+import { Container } from "../container";
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
+import DrawIcon from '@mui/icons-material/Draw';
 
 
 export const InnovateSection = () => {
+    const gridDetails = [
+        {
+            icon: <DesignServicesIcon
+                fontSize="large"
+            />,
+            title: 'Comprehensive Branding & Design Solutions',
+            text: 'From logo design to social media graphics, we cover it all.'
+        },
+        {
+            icon: <LocalMallIcon
+                fontSize="large"
+            />,
+            title: 'Tailored Packaging Solutions for Every Product',
+            text: 'From logo design to social media graphics, we cover it all.'
+        },
+        {
+            icon: <DrawIcon
+                fontSize="large"
+            />,
+            title: 'High-Quality Printing Services for Your Needs',
+            text: 'From logo design to social media graphics, we cover it all.'
+        },
+    ]
     return (
         <section className="bg-darkBlue text-white">
             <Container className="py-20">
@@ -18,6 +44,21 @@ export const InnovateSection = () => {
                     </p>
                 </section>
                 {/* GRID SECTION */}
+                <section className="mt-20 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
+                    {
+                        gridDetails.map((detail, index) => (
+                            <div key={index} className="flex flex-col gap-3 my-4">
+                                <div className="">
+                                    <i>{detail.icon}</i>
+                                </div>
+                                <h2 className="text-2xl md:text-3xl">
+                                    {detail.title}
+                                </h2>
+                                <p>{detail.text}</p>
+                            </div>
+                        ))
+                    }
+                </section>
             </Container>
         </section>
     )
