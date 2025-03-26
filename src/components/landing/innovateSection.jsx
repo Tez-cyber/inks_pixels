@@ -2,6 +2,9 @@ import { Container } from "../container";
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import DrawIcon from '@mui/icons-material/Draw';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { Button } from "../button";
+import { Link } from "react-router-dom";
 
 
 export const InnovateSection = () => {
@@ -30,9 +33,9 @@ export const InnovateSection = () => {
     ]
     return (
         <section className="bg-darkBlue text-white">
-            <Container className="py-20">
+            <Container className="py-20 flex flex-col gap-4 items-center text-center">
                 {/* HEADING SECTION */}
-                <section className="flex flex-col gap-4 items-center text-center">
+                <section className="flex flex-col gap-4 text-center">
                     <span className="text-gold capitalize font-bold">innovate</span>
                     <h1 className="text-[34px] leading-tight font-semibold md:text-[36px] md:w-[768px] lg:text-[48px]">
                         Transforming Ideas into Visual Masterpieces
@@ -44,7 +47,7 @@ export const InnovateSection = () => {
                     </p>
                 </section>
                 {/* GRID SECTION */}
-                <section className="mt-20 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
+                <section className="mt-14 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
                     {
                         gridDetails.map((detail, index) => (
                             <div key={index} className="flex flex-col gap-3 my-4">
@@ -59,6 +62,21 @@ export const InnovateSection = () => {
                         ))
                     }
                 </section>
+                {/* BUTTON SECTION */}
+                <div className='flex items-center gap-5 mt-4'>
+                    <Button
+                        size="md"
+                        variant="secondary"
+                    >
+                        Get started
+                    </Button>
+                    <Link className="font-semibold text-lg">
+                        <span>
+                            Learn more
+                        </span>
+                        <KeyboardArrowRightIcon />
+                    </Link>
+                </div>
             </Container>
         </section>
     )
