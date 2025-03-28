@@ -33,7 +33,7 @@ export const InnovateSection = () => {
     ]
     return (
         <section className="bg-darkBlue text-white">
-            <Container className="py-20 flex flex-col gap-4 items-center text-center">
+            <Container className="py-20 flex flex-col gap-4 items-center justify-center text-center">
                 {/* HEADING SECTION */}
                 <section className="flex flex-col gap-4 text-center">
                     <span className="text-gold capitalize font-bold">innovate</span>
@@ -47,14 +47,14 @@ export const InnovateSection = () => {
                     </p>
                 </section>
                 {/* GRID SECTION */}
-                <section className="mt-14 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
+                <section className="mt-14 grid grid-cols-1 gap-8 text-center items-center md:grid-cols-2 lg:grid-cols-3">
                     {
                         gridDetails.map((detail, index) => (
                             <div key={index} className="flex flex-col gap-3 my-4">
                                 <div className="">
                                     <i>{detail.icon}</i>
                                 </div>
-                                <h2 className="text-2xl md:text-3xl">
+                                <h2 className="text-2xl lg:text-3xl">
                                     {detail.title}
                                 </h2>
                                 <p>{detail.text}</p>
