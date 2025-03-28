@@ -1,10 +1,9 @@
 import { Container } from "../container"
-import aboutImg from '../../assets/img-1.jpg';
 import { Button } from "../button";
 
 export const InfoComponent = ({
     bgColor, infoTitle, infoDesc,
-    imgSrc, imgAlt
+    imgSrc, imgAlt, buttonText
 }) => {
     return (
         <section className={bgColor}>
