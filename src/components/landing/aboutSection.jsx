@@ -7,7 +7,7 @@ export const AboutSection1 = () => {
     <InfoComponent
       bgColor="bg-veryLightBlue"
       textColor="text-darkBlue"
-      flexDir="flex-row"
+      flexDir="md:flex-row"
       infoTitle={
         <>
           Your Creative Partner for <br className='hidden md:block' />
@@ -32,7 +32,7 @@ export const AboutSection2 = () => {
     <InfoComponent
       bgColor="bg-veryLightBlue"
       textColor="text-darkBlue"
-      flexDir="flex-row"
+      flexDir="md:flex-row"
       infoTitle={
         <>
           Unlock Your Brand's Potential with Our Exceptional Design and Service
@@ -55,7 +55,7 @@ export const AboutSection3 = () => {
     <InfoComponent
       bgColor="bg-lightBlue"
       textColor="text-white"
-      flexDir="flex-row-reverse"
+      flexDir="md:flex-row-reverse"
       infoTitle={
         <>
           Transforming brands with creativity and precision: Our success in numbers
