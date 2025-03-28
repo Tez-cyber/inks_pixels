@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MobileNavbar } from "./mobileNavbar";
 import { navLinks } from "../../utils";
 import { Container } from "../container";
+import { Logo } from "../logo";
 
 export const Navbar = () => {
     const [openNav, setOpenNav] = useState(false)
@@ -29,12 +30,7 @@ export const Navbar = () => {
                     </ul>
                 </section>
                 {/* ==== LOGO ==== */}
-                <section>
-                    <h3 className="flex flex-col uppercase text-xl">
-                        <span>inks &</span>
-                        <span className="text-gold">{" "}pixels</span>
-                    </h3>
-                </section>
+                <Logo />
                 {/* ==== CONTACT ==== */}
                 <section className="hidden md:block">
                     <Button
