@@ -2,18 +2,18 @@ import { Container } from "../container"
 import { Button } from "../button";
 
 export const InfoComponent = ({
-    bgColor, infoTitle, infoDesc,
-    imgSrc, imgAlt, buttonText
+    bgColor, textColor, infoTitle, infoDesc,
+    imgSrc, imgAlt, buttonText, flexDir, otherSection
 }) => {
     return (
         <section className={bgColor}>
-            <Container className="flex flex-col gap-6 py-20 md:items-center md:flex-row">
+            <Container className={`flex flex-col gap-10 py-20 md:items-center md:${flexDir}`}>
                 {/* ====== DESC SECTION ===== */}
-                <section className=' text-darkBlue flex flex-col gap-6 md:w-[50%]'>
+                <section className={`${textColor} flex flex-col gap-6 md:w-[50%]`}>
                     <h1 className="text-[35px] leading-tight md:text-[36px]">
                         {infoTitle}
                     </h1>
-                    <p className='text-[14px] md:w-[80%] md:text-[18px]'>
+                    <p className='text-[14px] md:text-[18px]'>
                         {infoDesc}
                     </p>
                     {
@@ -30,11 +30,14 @@ export const InfoComponent = ({
                                 </div>
                             ) : ("")
                     }
+                    {
+                        otherSection ? otherSection : ""
+                    }
                 </section>
                 {/* ====== IMAGE SECTION ===== */}
                 <section className="md:w-[50%]">
                     <div className="">
-                        <img className="w-full h-[600px] rounded-3xl object-cover" src={imgSrc} alt={imgAlt} />
+                        <img className="w-[500px] h-[400px] rounded-3xl object-cover md:h-[600px]" src={imgSrc} alt={imgAlt} />
                     </div>
                 </section>
             </Container>
