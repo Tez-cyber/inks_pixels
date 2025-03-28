@@ -57,7 +57,7 @@ export const InnovateSection = () => {
                                 <h2 className="text-2xl lg:text-3xl">
                                     {detail.title}
                                 </h2>
-                                <p>{detail.text}</p>
+                                <p className="text-slate-400">{detail.text}</p>
                             </div>
                         ))
                     }
@@ -70,7 +70,7 @@ export const InnovateSection = () => {
                     >
                         Get started
                     </Button>
-                    <Link className="font-semibold text-lg">
+                    <Link className="font-semibold text-slate-400 text-lg">
                         <span>
                             Learn more
                         </span>
