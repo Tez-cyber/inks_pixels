@@ -47,17 +47,22 @@ export const InnovateSection = () => {
                     </p>
                 </section>
                 {/* GRID SECTION */}
-                <section className="mt-10 grid grid-cols-1 gap-8 text-center items-center md:grid-cols-2 lg:grid-cols-3">
+                <section className="mt-10 grid grid-cols-1 gap-8 items-center md:grid-cols-2 lg:grid-cols-3">
                     {
                         gridDetails.map((detail, index) => (
-                            <div key={index} className="flex flex-col gap-3 my-4">
-                                <div className="">
-                                    <i>{detail.icon}</i>
+                            <div key={index} className="relative h-[350px] w-[350px] bg-lightBlue rounded-2xl p-3">
+                                <div className="absolute right-4 top-3 font-bold text-xl">
+                                    0{index + 1}
                                 </div>
-                                <h2 className="text-2xl lg:text-3xl">
-                                    {detail.title}
-                                </h2>
-                                <p className="text-slate-400">{detail.text}</p>
+                                <div className="flex flex-col gap-3 p-4 h-full absolute mt-28">
+                                    <div className="">
+                                        <i>{detail.icon}</i>
+                                    </div>
+                                    <h2 className="text-2xl">
+                                        {detail.title}
+                                    </h2>
+                                    <p className="text-gray-400">{detail.text}</p>
+                                </div>
                             </div>
                         ))
                     }
