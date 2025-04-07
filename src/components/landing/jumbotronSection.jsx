@@ -19,8 +19,8 @@ export const JumbotronSection = () => {
             <Container className="flex flex-col items-center w-full md:flex-row">
                 {/* ====== Description section ====== */}
                 <div className=' text-white bg-darkBlue flex flex-col gap-6 mt-[7rem] pb-[4rem] md:mt- md:w-[50%] lg:mt-0'>
-                    <h1 className="text-[40px] leading-tight md:text-[36px] lg:text-[50px]">
-                        Empowering Your <br />
+                    <h1 className="text-[32px] leading-tight md:text-[36px] lg:text-[50px]">
+                        Empowering Your <br className='hidden md:block' />
                         Brand with
                         <span className='ml-3 text-gold'>Creative Excellence</span>
                     </h1>

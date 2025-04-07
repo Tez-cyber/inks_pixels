@@ -10,7 +10,7 @@ export const InfoComponent = ({
             <Container className={`flex flex-col gap-10 py-20 md:items-center ${flexDir}`}>
                 {/* ====== DESC SECTION ===== */}
                 <section className={`${textColor} flex flex-col gap-6 md:w-[50%]`}>
-                    <h1 className="text-[35px] leading-tight md:text-[36px]">
+                    <h1 className="text-[30px] leading-tight md:text-[36px]">
                         {infoTitle}
                     </h1>
                     <p className='text-[14px] md:text-[18px]'>

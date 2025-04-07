@@ -37,7 +37,7 @@ export const InnovateSection = () => {
                 {/* HEADING SECTION */}
                 <section className="flex flex-col gap-4 text-center">
                     <span className="text-gold capitalize font-bold">innovate</span>
-                    <h1 className="text-[34px] leading-tight font-semibold md:text-[36px] md:w-[768px] lg:text-[48px]">
+                    <h1 className="text-[30px] leading-tight font-semibold md:text-[36px] md:w-[768px] lg:text-[48px]">
                         Transforming Ideas into Visual Masterpieces
                     </h1>
                     <p className="md:w-[768px]">
@@ -47,7 +47,7 @@ export const InnovateSection = () => {
                     </p>
                 </section>
                 {/* GRID SECTION */}
-                <section className="mt-14 grid grid-cols-1 gap-8 text-center items-center md:grid-cols-2 lg:grid-cols-3">
+                <section className="mt-10 grid grid-cols-1 gap-8 text-center items-center md:grid-cols-2 lg:grid-cols-3">
                     {
                         gridDetails.map((detail, index) => (
                             <div key={index} className="flex flex-col gap-3 my-4">

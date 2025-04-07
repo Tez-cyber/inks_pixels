@@ -65,8 +65,8 @@ export const Footer = () => {
                     </div>
                 </div>
             </Container>
-            <span className="bg-lightBlue w-full h-1 block my-3"></span>
-            <p className="text-center text-customGray pb-4">
+            <span className="bg-lightBlue w-full h-[1px] block mt-3"></span>
+            <p className="text-center text-customGray py-7">
                 &copy; {new Date().getFullYear()} and Pixels Nigeria Limited. All rights reserved.
             </p>
         </footer>
