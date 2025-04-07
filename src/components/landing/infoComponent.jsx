@@ -37,7 +37,7 @@ export const InfoComponent = ({
                 {/* ====== IMAGE SECTION ===== */}
                 <section className="md:w-[50%]">
                     <div className="">
-                        <img className="w-[500px] h-[400px] rounded-3xl object-cover md:h-[600px]" src={imgSrc} alt={imgAlt} />
+                        <img className="w-[500px] h-[400px] rounded-3xl object-cover md:h-[500px] md:w-full" src={imgSrc} alt={imgAlt} />
                     </div>
                 </section>
             </Container>

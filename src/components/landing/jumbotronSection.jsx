@@ -15,7 +15,7 @@ export const JumbotronSection = () => {
     const imgStyle = 'mb-6 h-[170px] w-[319.25px] rounded-3xl object-cover md:h-[300px]'
 
     return (
-        <section className='bg-darkBlue w-full h-[916.31px] flex items-center overflow-hidden md:h-screen'>
+        <section className='bg-darkBlue w-full h-[916.31px] flex items-center justify-center overflow-hidden md:h-screen'>
             <Container className="flex flex-col items-center w-full md:flex-row">
                 {/* ====== Description section ====== */}
                 <div className=' text-white bg-darkBlue flex flex-col gap-6 mt-[7rem] pb-[4rem] md:mt- md:w-[50%] lg:mt-0'>
