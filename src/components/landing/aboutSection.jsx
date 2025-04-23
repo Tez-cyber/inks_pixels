@@ -10,15 +10,13 @@ export const AboutSection1 = () => {
       flexDir="md:flex-row"
       infoTitle={
         <>
-          Your Creative Partner for <br className='hidden md:block' />
-          Exceptional Design
+          Exceptional Prints for Your Designs <br className='hidden md:block' />
         </>
       }
       infoDesc={`
-            At Ink and Pixels Nigeria Limited, we strive to be the leading creative partner in
-            Nigeria, dedicated to transforming your vision into reality. Our commitment to 
-            exceptional design and flawless execution ensures that your brand stands out 
-            in a competitive market.
+            At Ink and Pixels Nigeria Limited, we're your leading printing partner in Nigeria, dedicated to 
+            bringing your creative vision to life with flawless execution. Our commitment to exceptional print 
+            quality ensures your brand makes a lasting impression.
           `}
       imgSrc={aboutImg1}
       imgAlt="About Image"
