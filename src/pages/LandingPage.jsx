@@ -4,6 +4,7 @@ import { GetStarted } from "../components/landing/getStarted"
 import { InnovateSection } from "../components/landing/innovateSection"
 import { JumbotronSection } from "../components/landing/jumbotronSection"
 import { ProductSection } from "../components/landing/productSection"
+import { Testimonials } from "../components/landing/testimonials"
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
         <InnovateSection />
         <AboutSection2 />
         <AboutSection3 />
+        <Testimonials />
         <GetStarted />
         <FAQLanding />
     </section>
