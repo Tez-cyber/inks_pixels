@@ -1,14 +1,14 @@
-const products = [
+export const products = [
     {
         id: 1,
         title: "Business Cards",
-        img: "./products_assets/bus_cards.jpg",
+        img: "/products_assets/bus_cards.jpg",
         price: "5,000",
     },
     {
         id: 2,
         title: "A4 Courier Bags",
-        img: "./products_assets/larg-courier.webp",
+        img: "/products_assets/large-courier.webp",
         price: "4,500",
     },
     {
@@ -20,7 +20,7 @@ const products = [
     {
         id: 4,
         title: "Large Banners",
-        img: "./products_assets/flex-banner.jpg",
+        img: "/products_assets/flex-banner.jpg",
         price: "5,000",
     },
     {
@@ -32,19 +32,19 @@ const products = [
     {
         id: 6,
         title: "A4 Paper bags",
-        img: "./products_assets/paper_bags.jpg",
+        img: "/products_assets/paper_bags.jpg",
         price: "5,000",
     },
     {
         id: 7,
         title: "Branded jotters",
-        img: "./products_assets/jotter.jpg",
+        img: "/products_assets/jotter.jpg",
         price: "5,000",
     },
     {
         id: 8,
         title: "Small paper bags",
-        img: "./products_assets/small_paperbag.jfif",
+        img: "/products_assets/small_paperbag.jfif",
         price: "5,000",
     },
 ]
