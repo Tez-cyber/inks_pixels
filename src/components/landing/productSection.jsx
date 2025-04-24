@@ -3,8 +3,11 @@ import { products } from "../utils/products"
 
 export const ProductSection = () => {
     return (
-        <section>
-            <div className="p-10">
+        <section className="bg-lightBlue">
+            <div className="px-10 py-20">
+                <div className="pb-10">
+                    <h1 className="text-3xl font-bold text-white">Popular Products</h1>
+                </div>
                 {/* ====== product section ====== */}
                 <div className="grid gap-4 md:grid-cols-4">
                     {
