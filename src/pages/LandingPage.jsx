@@ -4,7 +4,7 @@ import { GetStarted } from "../components/landing/getStarted"
 import { InnovateSection } from "../components/landing/innovateSection"
 import { JumbotronSection } from "../components/landing/jumbotronSection"
 import { ProductSection } from "../components/landing/productSection"
-import { Testimonials } from "../components/landing/testimonials"
+import { Testimonials } from "../components/landing/testimonials/testimonials"
 
 const LandingPage = () => {
   return (
