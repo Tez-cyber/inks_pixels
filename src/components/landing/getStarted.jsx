@@ -4,7 +4,7 @@ import { Button } from '../button'
 
 export const GetStarted = () => {
     return (
-        <section className='bg-lightBlue'>
+        <section className='bg-darkBlue'>
             <Container className="text-center py-20">
                 <div className='border-[1.5px] border-[#aea9c5] text-veryLightBlue rounded-2xl py-10 px-5 flex flex-col items-center justify-center gap-10'>
                     <h1 className='text-3xl md:text-5xl'>Let's Bring Your Vision to Life</h1>
