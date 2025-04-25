@@ -1,3 +1,4 @@
+import { Button } from "../../button"
 import { TestimonialSlider } from "./testimonialSlider"
 
 
@@ -44,7 +45,22 @@ export const Testimonials = () => {
         <section>
             <div className="flex items-center w-full p-10 h-[80vh]">
                 <TestimonialSlider testimonials={testimonials} />
-                <div className="h-full w-[60%] bg-darkBlue">hello2</div>
+                <div className="h-full w-[60%] bg-darkBlue text-white flex flex-col justify-center gap-6 p-10">
+                    <h2 className="font-semibold text-gold text-xl">Start your project</h2>
+                    <p className="leading-loose">
+                        At Ink and Pixels Nigeria Limited, we're your leading printing partner in 
+                        Nigeria, dedicated to bringing your creative vision to life with flawless
+                        execution. Our commitment to exceptional print quality ensures your brand 
+                        makes a lasting impression.
+                    </p>
+                    <Button
+                        size="md"
+                        variant="secondary"
+                        className="w-fit"
+                    >
+                        Start your project
+                    </Button>
+                </div>
             </div>
         </section>
     )

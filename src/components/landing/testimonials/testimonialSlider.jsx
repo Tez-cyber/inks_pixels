@@ -22,13 +22,13 @@ export const TestimonialSlider = ({ testimonials }) => {
     return (
         <div className="h-full flex items-center w-[40%] bg-veryLightBlue py-5 relative overflow-hidden">
             <div
-                className="flex transition-transform gap-3 duration-500 ease-in-out w-full"
+                className="flex transition-transform gap-3 duration-1000 ease-in-out w-full"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {testimonials.map((data, i) => (
                     <div
                         key={i}
-                        className="flex flex-col justify-between gap-5 mb-4 px-2  w-full shrink-0"
+                        className="flex flex-col justify-between gap-5 mb-4 px-2 w-full shrink-0"
                     >
                         <div className="">
                             <img
@@ -49,13 +49,13 @@ export const TestimonialSlider = ({ testimonials }) => {
                 <>
                     <button
                         onClick={prevSlide}
-                        className="absolute right-14 cursor-pointer bottom-3 bg-gray-200 text-gray-700 size-[40px] rounded-full p-2 hover:bg-darkBlue hover:text-white"
+                        className="absolute right-14 cursor-pointer bottom-3 bg-gray-200 text-gray-700 size-[40px] rounded-full p-2 transition-all duration-500 ease-in-out hover:bg-darkBlue hover:text-white"
                     >
                         &lt;
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-2 cursor-pointer bottom-3 bg-gray-200 text-gray-700 size-[40px] rounded-full p-2 hover:bg-darkBlue hover:text-white"
+                        className="absolute right-2 cursor-pointer bottom-3 bg-gray-200 text-gray-700 size-[40px] rounded-full p-2 transition-all duration-500 ease-in-out hover:bg-darkBlue hover:text-white"
                     >
                         &gt;
                     </button>
