@@ -15,9 +15,9 @@ export const TestimonialSlider = ({ testimonials }) => {
 
   // Optional: Auto-play functionality
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 100000);
+    const intervalId = setInterval(nextSlide, 5000);
     return () => clearInterval(intervalId);
-  }, [testimonials.length]);
+  }, []);
 
   return (
     <div className="h-full flex items-center bg-veryLightBlue py-5 relative overflow-hidden w-full md:w-[70%] lg:w-[50%] xl:w-[40%]">
