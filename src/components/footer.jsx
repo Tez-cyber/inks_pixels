@@ -18,7 +18,7 @@ export const Footer = () => {
                         {
                             footerLinks.map((link, i) => (
                                 <li key={i} className="text-gray-500 pt-2 text-sm">
-                                    <Link to={link.link}>
+                                    <Link to={link.link} className="transition-colors duration-150 ease-in hover:text-white">
                                         {link.name}
                                     </Link>
                                 </li>
@@ -33,7 +33,7 @@ export const Footer = () => {
                         {
                             socials.map((link, i) => (
                                 <li key={i} className="text-gray-500 pt-2 text-sm">
-                                    <Link to={link.link}>
+                                    <Link to={link.link} className="transition-colors duration-150 ease-in hover:text-white">
                                         {link.name}
                                     </Link>
                                 </li>
