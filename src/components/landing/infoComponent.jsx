@@ -3,7 +3,7 @@ import { Button } from "../button";
 
 export const InfoComponent = ({
     bgColor, textColor, infoTitle, infoDesc,
-    imgSrc, imgAlt, buttonText, flexDir, otherSection
+    imgSrc, imgAlt, buttonText, flexDir, otherSection, href
 }) => {
     return (
         <section className={bgColor}>
@@ -23,7 +23,7 @@ export const InfoComponent = ({
                                     <Button
                                         size="md"
                                         variant="secondary"
-                                        className="transition-all duration-150 hover:bg-darkBlue hover:text-white hover:border-lightBlue active:border-0"
+                                        href={href}
                                     >
                                         {buttonText}
                                     </Button>

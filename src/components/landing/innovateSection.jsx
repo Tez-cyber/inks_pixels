@@ -71,11 +71,13 @@ export const InnovateSection = () => {
                 <div className='flex items-center gap-5 mt-4'>
                     <Button
                         size="md"
-                        variant="secondary"
+                        variant="darkPrimary"
+                        className="w-fit z-8"
+                        href="/about"
                     >
                         Get started
                     </Button>
-                    <Link className="font-semibold text-slate-400 text-lg">
+                    <Link to="#" className="font-semibold text-slate-400 text-lg">
                         <span>
                             Learn more
                         </span>

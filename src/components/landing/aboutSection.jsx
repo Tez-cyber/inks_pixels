@@ -21,6 +21,7 @@ export const AboutSection1 = () => {
       imgSrc={aboutImg1}
       imgAlt="About Image"
       buttonText="Learn more"
+      href="/about"
     />
   )
 }
@@ -44,6 +45,7 @@ export const AboutSection2 = () => {
       imgSrc={aboutImg1}
       imgAlt="About Image"
       buttonText="Learn more"
+      href="/about"
     />
   )
 }

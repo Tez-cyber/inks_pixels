@@ -55,7 +55,7 @@ export const Testimonials = () => {
                     </p>
                     <Button
                         size="md"
-                        variant="secondary"
+                        variant="darkPrimary"
                         className="w-fit"
                     >
                         Start your project
