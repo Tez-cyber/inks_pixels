@@ -33,12 +33,14 @@ export const JumbotronSection = () => {
                         <Button
                             size="md"
                             variant="primary"
+                            href="/getstarted"
                         >
                             Get started
                         </Button>
                         <Button
                             size="md"
                             variant="secondary"
+                            href="/about"
                         >
                             Learn more
                         </Button>
