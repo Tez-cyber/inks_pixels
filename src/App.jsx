@@ -1,4 +1,4 @@
-import React, { Suspense, useLayoutEffect } from 'react';
+import React, { Suspense, useLayoutEffect, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -31,8 +31,8 @@ const SuspenseFallback = () => {
         transition={{ duration: 0.8, ease: "easeInOut" }}
         className="flex flex-col items-center gap-4"
       >
-      <CircularProgress />
-      <p className="text-lg font-medium text-gray-700">
+        <CircularProgress />
+        <p className="text-lg font-medium text-gray-700">
           Loading...
         </p>
       </motion.div>
@@ -41,6 +41,24 @@ const SuspenseFallback = () => {
 };
 
 function App() {
+  useEffect(() => {
+    const applySmoothScroll = async () => { // Encapsulate the logic
+      if ('scrollBehavior' in document.documentElement.style) {
+        document.documentElement.style.scrollBehavior = 'smooth';
+      } else {
+        try {
+          const { polyfill } = await import('smoothscroll-polyfill');
+          polyfill();
+          console.log('Smoothscroll polyfill loaded');
+        } catch (error) {
+          console.error("Failed to load smoothscroll-polyfill:", error);
+          // Optionally, you could provide a user-friendly message here
+        }
+      }
+    };
+    applySmoothScroll();
+  }, []);
+
   return (
     <div>
       <Navbar />
