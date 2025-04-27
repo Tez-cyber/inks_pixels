@@ -1,6 +1,7 @@
 import React, { Suspense, useLayoutEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
+import CircularProgress from '@mui/material/CircularProgress';
 import { Navbar } from "./components/navbar/navbar";
 import { Footer } from "./components/footer";
 
@@ -15,25 +16,44 @@ const ScrollToTop = () => {
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]); // Depend on pathname for route change
+  }, [pathname]);
 
-  return null; // This component doesn't render anything directly
+  return null;
+};
+
+// Custom Suspense Fallback Component
+const SuspenseFallback = () => {
+  return (
+    <div className="fixed inset-0 bg-veryLightBlue flex items-center justify-center z-50">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="flex flex-col items-center gap-4"
+      >
+      <CircularProgress />
+      <p className="text-lg font-medium text-gray-700">
+          Loading...
+        </p>
+      </motion.div>
+    </div>
+  );
 };
 
 function App() {
   return (
-      <div> {/* Add a className for a root element if needed for global styles */}
-        <Navbar />
-        <Suspense fallback={<div>Loading...</div>}> {/* Wrap Routes in Suspense */}
-          <ScrollToTop /> {/* Render ScrollToTop outside of Routes */}
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/getstarted" element={<GetStartedPage />} />
-          </Routes>
-        </Suspense>
-        <Footer />
-      </div>
+    <div>
+      <Navbar />
+      <Suspense fallback={<SuspenseFallback />}>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/getstarted" element={<GetStartedPage />} />
+        </Routes>
+      </Suspense>
+      <Footer />
+    </div>
   );
 }
 
