@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export const GetStartedPage = () => {
+const GetStartedPage = () => {
   const [inProgress, setInProgress] = useState(false)
     return (
       <div>
@@ -17,3 +17,5 @@ export const GetStartedPage = () => {
       </div>
     )
 }
+
+export default GetStartedPage

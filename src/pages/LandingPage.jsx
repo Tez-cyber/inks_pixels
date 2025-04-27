@@ -6,7 +6,7 @@ import { JumbotronSection } from "../components/landing/jumbotronSection"
 import { ProductSection } from "../components/landing/productSection"
 import { Testimonials } from "../components/landing/testimonials/testimonials"
 
-export const LandingPage = () => {
+const LandingPage = () => {
   return (
     <section className="">
         <JumbotronSection />
@@ -21,4 +21,6 @@ export const LandingPage = () => {
     </section>
   )
 }
+
+export default LandingPage
 

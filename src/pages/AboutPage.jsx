@@ -2,7 +2,7 @@ import { useState } from "react"
 import { AboutPageSections } from "../components/about/aboutPageSections"
 
 
-export const AboutPage = () => {
+const AboutPage = () => {
   const [inProgress, setInProgress] = useState(false)
   return (
     <div>
@@ -20,3 +20,5 @@ export const AboutPage = () => {
     </div>
   )
 }
+
+export default AboutPage
