@@ -3,7 +3,7 @@ export const HeroSection = () => {
     return (
         <section
             id="about"
-            className="relative pt-28 md:pt-0 flex items-center"
+            className="relative pt-28 flex items-center md:pt-0"
         >
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <img
@@ -14,7 +14,7 @@ export const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#000028]/90 to-[#000028]/60"></div>
             </div>
 
-            <div className="mx-auto px-6 py-12 z-10">
+            <div className="mx-auto px-6 py-12 z-9">
                 <div className="">
                     <div className="text-white">
                         <h1 className="text-4xl font-bold mb-6 leading-tight md:text-5xl">
