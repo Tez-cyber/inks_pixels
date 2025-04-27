@@ -73,16 +73,19 @@ export const InnovateSection = () => {
                         size="md"
                         variant="darkPrimary"
                         className="w-fit z-8"
-                        href="/about"
+                        href="/getstarted"
                     >
                         Get started
                     </Button>
-                    <Link to="#" className="font-semibold text-slate-400 text-lg">
+                    {/* <Link to="/about" className="font-semibold text-slate-400 text-lg">
                         <span>
                             Learn more
                         </span>
                         <KeyboardArrowRightIcon />
-                    </Link>
+                    </Link> */}
+                    {/* <button className="font-semibold text-slate-300 cursor-pointer text-lg hover:text-white">
+                        Learn more <KeyboardArrowRightIcon />
+                    </button> */}
                 </div>
             </Container>
         </section>
