@@ -31,16 +31,18 @@ export const TestimonialSlider = ({ testimonials }) => {
             className="flex flex-col justify-between gap-5 mb-4 px-4 sm:px-6 md:px-8 w-full shrink-0"
           >
             <div className="flex flex-col items-start gap-4">
+              <p className="text-lg w-[90%]">{data.testimonial}</p>
+            </div>
+            <div className='flex flex-row-reverse items-center justify-between w-[90%]'>
               <img
                 src={data.image}
                 alt={data.name}
                 className="w-12 h-12 rounded-full"
               />
-              <p className="text-lg w-[90%]">{data.testimonial}</p>
-            </div>
-            <div className="leading-tight">
-              <h2 className="text-lightBlue font-semibold">{data.name}</h2>
-              <p className="text-orange-800 text-sm">{data.position}</p>
+              <div className="leading-tight">
+                <h2 className="text-lightBlue font-semibold">{data.name}</h2>
+                <p className="text-orange-800 text-sm">{data.position}</p>
+              </div>
             </div>
           </div>
         ))}
@@ -63,9 +65,8 @@ export const TestimonialSlider = ({ testimonials }) => {
             {testimonials.map((_, index) => (
               <div
                 key={index}
-                className={`w-2 h-2 rounded-full ${
-                  index === currentIndex ? 'bg-darkBlue' : 'bg-gray-300'
-                } cursor-pointer`}
+                className={`w-2 h-2 rounded-full ${index === currentIndex ? 'bg-darkBlue' : 'bg-gray-300'
+                  } cursor-pointer`}
                 onClick={() => setCurrentIndex(index)}
               ></div>
             ))}

@@ -45,7 +45,7 @@ export const Testimonials = () => {
         <section>
             <div className="flex flex-col items-center w-full p-10 md:h-[90vh] md:flex-row">
                 <TestimonialSlider testimonials={testimonials} />
-                <div className="h-full bg-darkBlue text-white flex flex-col justify-center gap-6 p-10 md:w-[60%]">
+                <div className="h-full bg-lightBlue text-white flex flex-col justify-center gap-6 p-10 md:w-[60%]">
                     <h2 className="font-semibold text-gold text-xl">Start your project</h2>
                     <p className="leading-loose">
                         At Ink and Pixels Nigeria Limited, we're your leading printing partner in 
@@ -55,8 +55,9 @@ export const Testimonials = () => {
                     </p>
                     <Button
                         size="md"
-                        variant="darkPrimary"
+                        variant="secondary"
                         className="w-fit"
+                        href="/getstarted"
                     >
                         Start your project
                     </Button>
