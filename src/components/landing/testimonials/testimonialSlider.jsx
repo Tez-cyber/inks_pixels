@@ -20,7 +20,7 @@ export const TestimonialSlider = ({ testimonials }) => {
   }, []);
 
   return (
-    <div className="h-[300px] flex items-center bg-veryLightBlue py-5 relative overflow-hidden w-full md:w-[70%] lg:w-[50%] xl:w-[40%]">
+    <div className="h-[300px] rounded-l-3xl flex items-center bg-veryLightBlue py-5 relative overflow-hidden w-full md:w-[70%] lg:w-[50%] xl:w-[40%]">
       <div
         className="flex transition-transform gap-3 duration-1000 ease-in-out w-full"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
