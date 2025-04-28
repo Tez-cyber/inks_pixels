@@ -2,6 +2,7 @@ import { HeroSection } from "./heroSection"
 import { CoreIdentitySection } from "./coreIdentitySection"
 import { ServicesSection } from "./servicesSection"
 import { ChooseUsSection } from "./chooseUsSection"
+import { AboutSection1 } from "./aboutSection"
 
 export const AboutPageSections = () => {
     return (
@@ -9,6 +10,7 @@ export const AboutPageSections = () => {
             <HeroSection />
             <CoreIdentitySection />
             <ServicesSection />
+            <AboutSection1 />
             <ChooseUsSection />
         </div>
     )

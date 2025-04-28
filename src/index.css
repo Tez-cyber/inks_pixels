@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 
-body {
-    padding: 0;
-    margin: 0;
-}
 
 @theme {
+
+    /* ====== font ===== */
+    --font-karla: 'Karla', sans-serif;
 
     /* ======= colors ======= */
     --color-darkBlue: #000029;
@@ -13,4 +13,10 @@ body {
     --color-veryLightBlue: #cbcbd4;
     --color-customGray: #cbcbd4;
     --color-gold: #ffd900;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-karla);
 }
