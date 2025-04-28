@@ -1,6 +1,57 @@
+import { useEffect, useRef, useState } from 'react';
 import aboutImg1 from '../../assets/img-1.jpg';
 import aboutImg3 from '../../assets/img-2.jpg';
 import { InfoComponent } from "./infoComponent";
+
+const Counter = ({ targetNumber }) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          animateCount();
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the element is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const animateCount = () => {
+    let start = 0;
+    const duration = 2000; // 2 seconds total
+    const incrementTime = 20;
+    const increment = Math.ceil(targetNumber / (duration / incrementTime));
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= targetNumber) {
+        start = targetNumber;
+        clearInterval(timer);
+      }
+      setCount(start);
+    }, incrementTime);
+  };
+
+  return (
+    <div ref={ref}>
+      {count}
+    </div>
+  );
+};
 
 export const AboutSection1 = () => {
   return (
@@ -73,11 +124,16 @@ export const AboutSection3 = () => {
       otherSection={
         <div className='flex flex-col gap-4 md:flex-row'>
           <div className="">
-            <p className='text-4xl pb-2 md:text-5xl'>200</p>
+            <div className='text-4xl pb-2 md:text-5xl'>
+              <Counter targetNumber={200} />
+            </div>
             <span className='text-sm'>Clients served with dedication and creativity.</span>
           </div>
           <div className="">
-            <p className='text-4xl pb-2 md:text-5xl'>500</p>
+            <div className='text-4xl flex gap-1 pb-2 md:text-5xl'>
+              <Counter targetNumber={500} />
+              +
+            </div>
             <span className='text-sm'>Projects completed, each with unique flair.</span>
           </div>
         </div>

@@ -13,9 +13,9 @@ export const InfoComponent = ({
                     <h1 className="text-[30px] leading-tight md:text-[36px]">
                         {infoTitle}
                     </h1>
-                    <p className='text-[14px] md:text-[18px]'>
+                    <div className='text-[14px] md:text-[18px]'>
                         {infoDesc}
-                    </p>
+                    </div>
                     {
                         buttonText ?
                             (
