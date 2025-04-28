@@ -65,7 +65,7 @@ export const ServicesSection = () => {
                         We offer comprehensive creative solutions to help your business
                         establish a strong visual identity and presence.
                     </p>
-                    <div className="w-24 h-1 bg-[#FFD700] mx-auto mt-4"></div>
+                    <div className="w-24 h-1 bg-gold mx-auto mt-4"></div>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -90,14 +90,14 @@ export const ServicesSection = () => {
                                     <ul className="text-gray-700 space-y-2 mb-4">
                                         {
                                             service.description.map((desc, index) => (
-                                                <li className="flex items-center">
-                                                    <CheckIcon className="text-[#FFD700] mr-2" />
-                                                    <span key={index}>{desc}</span>
+                                                <li className="flex items-center text-sm">
+                                                    <CheckIcon className="text-gold mr-2" />
+                                                    <span key={index} className='text-sm'>{desc}</span>
                                                 </li>
                                             ))
                                         }
                                     </ul>
-                                    <Link
+                                    {/* <Link
                                         to=""
                                         className="text-[#000028] font-semibold flex items-center cursor-pointer whitespace-nowrap rounded-md transition-colors duration-200 group"
                                     >
@@ -108,7 +108,7 @@ export const ServicesSection = () => {
                                         >
                                             <EastIcon />
                                         </span>
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                         ))
