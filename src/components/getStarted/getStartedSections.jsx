@@ -62,6 +62,8 @@ const MainForm = () => {
         referralSource: "",
     });
 
+    console.log(formData)
+
     const businessTypes = [
         "Retail",
         "Manufacturing",
@@ -107,14 +109,20 @@ const MainForm = () => {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission
-        console.log(formData);
-    };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form
+            action="https://formsubmit.co/69713c2543292f8fb3ef95f074dfe9b5"
+            method="POST"
+            encType="multipart/form-data"
+            className="space-y-6"
+        >
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="http://localhost:5173/" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style={{ display: "none" }} />
+            <input type="hidden" name="_subject" value="New submission for inks and pixels!" />
+
             <div className="grid gap-6 md:grid-cols-2">
                 <InputField
                     label="First Name"

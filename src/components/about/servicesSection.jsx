@@ -72,7 +72,7 @@ export const ServicesSection = () => {
                     {/* Service 1 */}
                     {
                         servicesDetails.map((service, index) => (
-                            <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+                            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
                                 <div className="h-48 overflow-hidden">
                                     <img
                                         src={service.src}
@@ -90,7 +90,7 @@ export const ServicesSection = () => {
                                     <ul className="text-gray-700 space-y-2 mb-4">
                                         {
                                             service.description.map((desc, index) => (
-                                                <li className="flex items-center text-sm">
+                                                <li key={index} className="flex items-center text-sm">
                                                     <CheckIcon className="text-gold mr-2" />
                                                     <span key={index} className='text-sm'>{desc}</span>
                                                 </li>

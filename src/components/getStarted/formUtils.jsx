@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 export const InputField = ({ label, name, required, value, onChange, placeholder, type = "text", className }) => {
     return (
@@ -84,27 +85,37 @@ export const FileUploadField = ({ label, name, onChange, className }) => {
             setUploadProgress(0);
             setIsUploaded(false);
 
-            // Simulate upload progress
             const interval = setInterval(() => {
                 setUploadProgress((prevProgress) => {
                     if (prevProgress === null) return 0;
                     const newProgress = prevProgress + 10;
                     if (newProgress >= 100) {
                         clearInterval(interval);
-                        setIsUploaded(true);
-                        onChange(newFiles);
                         return 100;
                     }
                     return newProgress;
                 });
             }, 100);
-
-            setTimeout(() => {
-                setUploadProgress(null);
-                setFileName(null);
-                setIsUploaded(false);
-            }, 5000);
         }
+    };
+
+    // ✅ Safe way to notify parent once upload is complete
+    useEffect(() => {
+        if (uploadProgress === 100 && files && !isUploaded) {
+            setIsUploaded(true);
+            onChange(files);
+        }
+    }, [uploadProgress, files, isUploaded, onChange]);
+
+    const handleCancel = () => {
+        setFiles(null);
+        setFileName(null);
+        setUploadProgress(null);
+        setIsUploaded(false);
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
+        onChange(null); // Notify parent component that files have been cleared
     };
 
     return (
@@ -115,7 +126,7 @@ export const FileUploadField = ({ label, name, onChange, className }) => {
             <div className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md ${className}`}>
                 <div className="space-y-1 text-center">
                     <CloudUploadIcon
-                        fontSize='large'
+                        fontSize="large"
                         className="text-gray-400 text-3xl mb-3 cursor-pointer hover:text-darkBlue"
                         onClick={() => fileInputRef.current?.click()}
                     />
@@ -152,9 +163,9 @@ export const FileUploadField = ({ label, name, onChange, className }) => {
                         transition={{ duration: 0.3 }}
                         className="mt-4"
                     >
-                        <div className="bg-gray-200 rounded-full h-2.5">
+                        <div className="bg-gray-200 rounded-full h-2.5 flex items-center">
                             <motion.div
-                                className={`bg-[#FFD700] h-2.5 rounded-full`}
+                                className="bg-[#FFD700] h-2.5 rounded-full"
                                 initial={{ width: '0%' }}
                                 animate={{ width: `${uploadProgress}%` }}
                                 transition={{ duration: 0.1 }}
@@ -165,13 +176,21 @@ export const FileUploadField = ({ label, name, onChange, className }) => {
                                 ? `Uploading ${fileName}... ${uploadProgress}%`
                                 : isUploaded
                                     ? `Uploaded ${fileName} successfully!`
-                                    : 'Upload complete'
-                            }
+                                    : 'Upload complete'}
                         </p>
                         {isUploaded && (
                             <div className="flex items-center gap-2 mt-2">
-                                <CheckCircleIcon className="text-green-500" size={16} />
+                                <CheckCircleIcon className="text-green-500" />
                                 <span className="text-green-500 text-sm">File uploaded</span>
+                                <button
+                                    type="button"
+                                    onClick={handleCancel}
+                                    className="ml-2 p-0.5 rounded-full group flex items-center"
+                                    title="Clear upload"
+                                >
+                                    <CancelIcon className="text-red-500" />
+                                    <span className="text-gray-500 text-sm ml-2 group-hover:text-red-400">delete upload</span>
+                                </button>
                             </div>
                         )}
                     </motion.div>
