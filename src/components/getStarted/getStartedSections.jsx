@@ -98,11 +98,11 @@ const MainForm = () => {
         }));
     };
 
-    const handleFileChange = (e) => {
-        if (e.target.files) {
+    const handleFileChange = (files) => {
+        if (files) {
             setFormData((prev) => ({
                 ...prev,
-                files: Array.from(e.target.files || []),
+                files: Array.from(files || []),
             }));
         }
     };
