@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Navbar } from "./components/navbar/navbar";
 import { Footer } from "./components/footer";
+import ThankYouPage from './pages/ThankYouPage';
 
 // Use React.memo for components that don't need to update on every render
 const LandingPage = React.memo(React.lazy(() => import("./pages/LandingPage")));
@@ -68,6 +69,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/getstarted" element={<GetStartedPage />} />
+          <Route path="/thankyou" element={<ThankYouPage />} />
         </Routes>
       </Suspense>
       <Footer />
