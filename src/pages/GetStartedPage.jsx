@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { GetStartedSections } from "../components/getStarted/getStartedSections"
 
 
 const GetStartedPage = () => {
@@ -6,8 +7,8 @@ const GetStartedPage = () => {
     return (
       <div>
         {
-          inProgress ? (
-            <></>
+          !inProgress ? (
+            <GetStartedSections />
           ) : (
             <div className="h-[50vh] bg-lightBlue text-6xl px-5 flex items-center justify-center text-white">
               Page under construction
