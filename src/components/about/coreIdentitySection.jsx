@@ -40,7 +40,6 @@ export const CoreIdentitySection = () => {
           <h2 className="text-3xl font-bold text-darkBlue mb-4 md:text-4xl">
             Our Core Identity
           </h2>
-          <div className="w-24 h-1 bg-[#FFD700] mx-auto"></div>
         </div>
 
         <div className="grid gap-12 items-center md:grid-cols-2">

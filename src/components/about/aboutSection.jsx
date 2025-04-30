@@ -11,7 +11,6 @@ export const AboutSection1 = () => {
             infoTitle={
                 <>
                     Inks and pixels takes the stress out of print and manufacture
-                    <div className="w-24 h-1 bg-[#FFD700] mt-4"></div>
                 </>
             }
             infoDesc={

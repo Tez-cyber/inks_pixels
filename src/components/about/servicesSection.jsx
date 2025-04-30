@@ -65,7 +65,6 @@ export const ServicesSection = () => {
                         We offer comprehensive creative solutions to help your business
                         establish a strong visual identity and presence.
                     </p>
-                    <div className="w-24 h-1 bg-gold mx-auto mt-4"></div>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

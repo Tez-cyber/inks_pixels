@@ -40,7 +40,6 @@ export const ChooseUsSection = () => {
                         At Ink and Pixels Nigeria Limited, we're committed to delivering
                         exceptional quality and service.
                     </p>
-                    <div className="w-24 h-1 bg-[#FFD700] mx-auto mt-4"></div>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
