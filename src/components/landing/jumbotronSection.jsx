@@ -18,8 +18,8 @@ export const JumbotronSection = () => {
         <section className='bg-darkBlue w-full h-[916.31px] flex items-center justify-center overflow-hidden md:h-screen'>
             <Container className="flex flex-col items-center w-full md:flex-row">
                 {/* ====== Description section ====== */}
-                <div className=' text-white bg-darkBlue flex flex-col gap-6 mt-[8rem] pb-[4rem] md:mt- md:w-[50%] lg:mt-0'>
-                    <h1 className="text-[30px] leading-tight md:text-[36px] lg:text-[50px]">
+                <div className=' text-white bg-darkBlue flex flex-col gap-6 mt-[6rem] pb-[4rem] md:mt- md:w-[50%] lg:mt-0'>
+                    <h1 className="text-[28px] leading-tight md:text-[36px] lg:text-[50px]">
                         Empowering Your <br className='hidden md:block' />
                         Brand with
                         <span className='ml-3 text-gold'>Creative Excellence</span>

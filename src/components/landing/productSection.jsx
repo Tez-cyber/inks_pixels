@@ -9,7 +9,7 @@ export const ProductSection = () => {
                     <h1 className="text-3xl font-semiboldbold text-white">Popular Products</h1>
                 </div>
                 {/* ====== product section ====== */}
-                <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                     {
                         products.map((product) => {
                             return (

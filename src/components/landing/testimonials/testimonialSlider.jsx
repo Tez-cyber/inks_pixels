@@ -20,9 +20,9 @@ export const TestimonialSlider = ({ testimonials }) => {
   }, []);
 
   return (
-    <div className="h-[300px] rounded-l-3xl flex items-center bg-veryLightBlue py-5 relative overflow-hidden w-full md:w-[70%] lg:w-[50%] xl:w-[40%]">
+    <div className="h-[400px] flex items-center bg-veryLightBlue py-5 relative overflow-hidden w-full md:h-[300px] md:rounded-l-3xl md:w-[70%] lg:w-[50%] xl:w-[40%]">
       <div
-        className="flex transition-transform gap-3 duration-1000 ease-in-out w-full"
+        className="flex transition-transform gap-3 duration-1000 ease-in-out w-[200px] md:w-full"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {testimonials.map((data, i) => (
@@ -31,9 +31,9 @@ export const TestimonialSlider = ({ testimonials }) => {
             className="flex flex-col justify-between gap-5 mb-4 px-4 sm:px-6 md:px-8 w-full shrink-0"
           >
             <div className="flex flex-col items-start gap-4">
-              <p className="text-lg w-[90%]">{data.testimonial}</p>
+              <p className="text-lg w-full md:w-[90%]">{data.testimonial}</p>
             </div>
-            <div className='flex flex-row-reverse items-center justify-between w-[90%]'>
+            <div className='flex flex-row-reverse items-center justify-between w-[85%] md:w-[90%]'>
               <img
                 src={data.image}
                 alt={data.name}

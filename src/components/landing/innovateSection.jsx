@@ -35,9 +35,9 @@ export const InnovateSection = () => {
         <section className="bg-darkBlue text-white">
             <Container className="py-20 flex flex-col gap-4 items-center justify-center">
                 {/* HEADING SECTION */}
-                <section className="flex flex-col gap-4 text-center">
+                <section className="flex flex-col gap-4 md:text-center">
                     <span className="text-gold capitalize font-bold">innovate</span>
-                    <h1 className="text-[30px] leading-tight font-semibold md:text-[36px] md:w-[768px] lg:text-[48px]">
+                    <h1 className="text-[26px] leading-tight font-semibold md:text-[36px] md:w-[768px] lg:text-[48px]">
                         Transforming Ideas into Visual Masterpieces
                     </h1>
                     <p className="md:w-[768px]">
@@ -50,7 +50,7 @@ export const InnovateSection = () => {
                 <section className="mt-10 grid grid-cols-1 gap-8 items-center md:grid-cols-2 lg:grid-cols-3">
                     {
                         gridDetails.map((detail, index) => (
-                            <div key={index} className="relative h-[350px] w-[350px] bg-lightBlue rounded-2xl p-3">
+                            <div key={index} className="relative h-[350px] w-[300px] bg-lightBlue rounded-2xl p-3 md:w-[350px]">
                                 <div className="absolute right-4 top-3 font-bold text-xl">
                                     0{index + 1}
                                 </div>
