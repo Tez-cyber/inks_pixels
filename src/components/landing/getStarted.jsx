@@ -18,14 +18,16 @@ export const GetStarted = () => {
                             size="md"
                             variant="darkPrimary"
                             className="border-lightBlue border-[2.5px] border-b-[5px]"
+                            href="/getstarted"
                         >
                             Get started
                         </Button>
                         <Button
                             size="md"
                             variant="secondary"
+                            href="/about"
                         >
-                            Contact us
+                            Learn more
                         </Button>
                     </div>
                 </div>

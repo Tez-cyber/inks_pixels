@@ -73,9 +73,9 @@ export const InnovateSection = () => {
                         size="md"
                         variant="darkPrimary"
                         className="w-fit z-8"
-                        href="/getstarted"
+                        href="/services"
                     >
-                        Get started
+                        Know more
                     </Button>
                     {/* <Link to="/about" className="font-semibold text-slate-400 text-lg">
                         <span>

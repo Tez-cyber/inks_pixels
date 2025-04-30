@@ -58,13 +58,13 @@ export const FAQLanding = () => {
                         Find answers to your most common questions about our
                         services and offerings.
                     </p>
-                    <Button
+                    {/* <Button
                         size="md"
                         variant="secondary"
                         className="w-fit transition-all duration-150 hover:bg-darkBlue hover:text-white hover:border-lightBlue active:border-0"
                     >
                         Contact
-                    </Button>
+                    </Button> */}
                 </div>
                 <div className=" rounded-lg overflow-hidden md:w-[60%]">
                     {faqs.map((faq, index) => (
