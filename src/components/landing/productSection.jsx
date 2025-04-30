@@ -9,16 +9,16 @@ export const ProductSection = () => {
                     <h1 className="text-3xl font-semiboldbold text-white">Popular Products</h1>
                 </div>
                 {/* ====== product section ====== */}
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {
                         products.map((product) => {
                             return (
-                                <div key={product.id} className="flex flex-col items-center justify-center mt-4 overflow-hidden ">
+                                <div key={product.id} className="flex flex-col items-center justify-center mt-4 overflow-hidden w-[300px] md:w-[300px] lg:w-[300px] ">
                                     <div className="overflow-hidden">
                                         <img
                                             src={`${product.img}`}
                                             alt={product.title}
-                                            className="h-[300px] w-[300px] object-cover rounded-2xl transition-transform duration-1000 ease-in-out hover:scale-125 md:w-[280px]"
+                                            className="h-[300px] w-[300px] object-cover rounded-2xl transition-transform duration-1000 ease-in-out hover:scale-125 lg:w-[350px]"
                                         />
                                     </div>
                                     <div className="p-4 w-full md:w-full lg:w-full">
