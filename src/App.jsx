@@ -10,6 +10,7 @@ import ThankYouPage from './pages/ThankYouPage';
 const LandingPage = React.memo(React.lazy(() => import("./pages/LandingPage")));
 const AboutPage = React.memo(React.lazy(() => import("./pages/AboutPage")));
 const GetStartedPage = React.memo(React.lazy(() => import("./pages/GetStartedPage")));
+const ServicesPage = React.memo(React.lazy(() => import("./pages/ServicesPage")));
 
 // Optimized ScrollToTop component using useLayoutEffect and route change detection
 const ScrollToTop = () => {
@@ -70,6 +71,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/getstarted" element={<GetStartedPage />} />
           <Route path="/thankyou" element={<ThankYouPage />} />
+          <Route path="/service" element={<ServicesPage />} />
         </Routes>
       </Suspense>
       <Footer />

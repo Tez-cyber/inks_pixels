@@ -7,11 +7,11 @@ const ServicesPage = () => {
   return (
     <div>
       {
-        !inProgress ? (
+        inProgress ? (
           <>
           </>
         ) : (
-          <div className="h-[50vh] bg-lightBlue text-6xl px-5 flex items-center justify-center text-white">
+          <div className="h-[50vh] bg-lightBlue px-5 flex items-center justify-center text-white text-3xl md:text-6xl">
             Page under construction
           </div>
         )
