@@ -36,6 +36,7 @@ export const Navbar = () => {
                     <Button
                         size="sm"
                         variant="primary"
+                        href="/getstarted"
                     >
                         Contact
                     </Button>
