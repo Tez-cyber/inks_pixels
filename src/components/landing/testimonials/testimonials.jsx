@@ -43,7 +43,7 @@ export const Testimonials = () => {
     ]
     return (
         <section>
-            <div className="flex flex-col items-center w-full p-10 md:h-[90vh] md:flex-row">
+            <div className="hidden flex-col items-center w-full p-10 md:flex md:h-[90vh] md:flex-row">
                 <TestimonialSlider testimonials={testimonials} />
                 <div className="h-full bg-lightBlue text-white flex-col justify-center gap-6 p-10 hidden md:flex md:rounded-r-3xl md:w-[60%]">
                     <h2 className="font-semibold text-gold text-xl">Start your project</h2>
