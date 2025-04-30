@@ -8,7 +8,7 @@ import { Button } from "./button"
 export const Footer = () => {
     return (
         <footer className="bg-darkBlue">
-            <Container className="py-10 justify-between grid grid-cols-2 md:flex md:flex-row">
+            <Container className="py-10 justify-between grid grid-cols-2 gap-3 lg:flex lg:flex-row">
                 {/* LOGO */}
                 <Logo />
                 {/* Footer links */}
