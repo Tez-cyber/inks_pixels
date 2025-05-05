@@ -56,7 +56,6 @@ export const Navbar = () => {
                     </Button>
                     {
                         openNav && <MobileNavbar
-                            onCloseNav={handleMenuClick}
                         />
                     }
                 </section>

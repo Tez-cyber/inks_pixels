@@ -65,7 +65,7 @@ function App() {
     <div>
       <Navbar />
       <Suspense fallback={<SuspenseFallback />}>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
