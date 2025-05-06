@@ -14,7 +14,7 @@ export const Navbar = () => {
     return (
         <nav
             className={`bg-darkBlue sticky top-0
-                h-[70px] text-white z-10
+                h-[70px] text-white z-10 
             `}
         >
             <Container className="flex items-center justify-between py-2">
@@ -56,6 +56,7 @@ export const Navbar = () => {
                     </Button>
                     {
                         openNav && <MobileNavbar
+                            onCloseNav={handleMenuClick}
                         />
                     }
                 </section>
