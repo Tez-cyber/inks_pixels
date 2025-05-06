@@ -20,3 +20,31 @@ body {
     margin: 0;
     font-family: var(--font-karla);
 }
+
+
+/* Custom scrollbar styles */
+.scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #1e293b;
+    /* thumb | track */
+}
+
+/* WebKit for Chrome, Edge, Safari */
+.scrollbar-custom::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 9999px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+}
+
+.scrollbar-custom:hover::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+}
