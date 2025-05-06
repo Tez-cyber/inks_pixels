@@ -19,14 +19,13 @@ export const MobileNavbar = ({ onCloseNav }) => {
     >
       <motion.section className="w-full h-full absolute inset-0 flex flex-col justify-center">
         <motion.ul className="mx-16 leading-loose md:mt-4 md:leading-snug">
-          {navLinks.map((nav, i) => (
+          {/* {navLinks.map((nav, i) => (
             <motion.li
               key={i}
               className="overflow-hidden"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <motion.div>
                 <a
                   href={nav.link}
                   onClick={onCloseNav}
@@ -34,9 +33,47 @@ export const MobileNavbar = ({ onCloseNav }) => {
                 >
                   {nav.name}
                 </a>
-              </motion.div>
             </motion.li>
-          ))}
+          ))} */}
+          <motion.li
+            className="overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <a
+              href="/"
+              onClick={onCloseNav}
+              className="text-white text-[40px] block uppercase transition duration-150 ease-in hover:text-brightGreen hover:-translate-y-1 md:text-[75px]"
+            >
+              Home
+            </a>
+          </motion.li>
+          <motion.li
+            className="overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <a
+              href="/about"
+              onClick={onCloseNav}
+              className="text-white text-[40px] block uppercase transition duration-150 ease-in hover:text-brightGreen hover:-translate-y-1 md:text-[75px]"
+            >
+              About
+            </a>
+          </motion.li>
+          <motion.li
+            className="overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <a
+              href="/services"
+              onClick={onCloseNav}
+              className="text-white text-[40px] block uppercase transition duration-150 ease-in hover:text-brightGreen hover:-translate-y-1 md:text-[75px]"
+            >
+              Services
+            </a>
+          </motion.li>
         </motion.ul>
         <Button
           size="sm"
