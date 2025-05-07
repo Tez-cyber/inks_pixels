@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ServiceSection } from "../components/services/serviceSection"
 
 
 
@@ -7,8 +8,9 @@ const ServicesPage = () => {
   return (
     <div>
       {
-        inProgress ? (
+        !inProgress ? (
           <>
+            <ServiceSection />
           </>
         ) : (
           <div className="h-[50vh] bg-lightBlue px-5 flex items-center justify-center text-white text-3xl md:text-6xl">
