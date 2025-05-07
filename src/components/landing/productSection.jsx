@@ -2,17 +2,20 @@ import React, { useRef, useState, useEffect } from 'react';
 import { products } from "../utils/products";
 
 export const ProductSection = () => {
-    const containerRef = useRef (null);
+    const containerRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
 
     const itemWidth = 300 + 16; // product width + gap
     const scrollAmount = itemWidth;
 
-    const scrollLeft = () => {
+    const scrollToLeft = () => {
         containerRef.current?.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     };
 
-    const scrollRight = () => {
+    const scrollToRight = () => {
         containerRef.current?.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     };
 
@@ -23,6 +26,25 @@ export const ProductSection = () => {
             const index = Math.round(scrollLeft / itemWidth);
             setActiveIndex(index);
         }
+    };
+
+    // Touch event handlers for mobile scrolling
+    const handleTouchStart = (e) => {
+        setIsDragging(true);
+        setStartX(e.touches[0].pageX);
+        setScrollLeft(containerRef.current.scrollLeft);
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX;
+        const walk = (x - startX) * 2; // Adjust multiplier for faster/slower swipe
+        containerRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleTouchEnd = () => {
+        setIsDragging(false);
     };
 
     useEffect(() => {
@@ -43,8 +65,16 @@ export const ProductSection = () => {
                 <div className="relative">
                     <div
                         ref={containerRef}
-                        className="flex gap-4 overflow-x-hidden scroll-smooth"
-                        style={{ scrollSnapType: 'x mandatory' }}
+                        className="flex gap-4 overflow-x-auto scroll-smooth touch-none" 
+                        style={{
+                            scrollSnapType: 'x mandatory',
+                            scrollbarWidth: 'none', 
+                            msOverflowStyle: 'none', 
+                        }}
+
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {products.map((product) => (
                             <div
@@ -68,17 +98,17 @@ export const ProductSection = () => {
                     </div>
 
                     {/* Navigation Arrows (Hidden on small screens) */}
-                    <div className="hidden md:flex justify-center gap-4 mt-6">
+                    <div className="flex justify-center gap-4 mt-6">
                         <button
-                            onClick={scrollLeft}
+                            onClick={scrollToLeft}
                             className="absolute right-14 cursor-pointer bottom-3 bg-gray-200 text-gray-700 size-[40px] rounded-full p-2 transition-all duration-500 ease-in-out hover:bg-darkBlue hover:text-white md:right-20"
-                            >
+                        >
                             &lt;
                         </button>
                         <button
-                            onClick={scrollRight}
+                            onClick={scrollToRight}
                             className="absolute right-2 md:right-6 cursor-pointer bottom-3 bg-gray-200 text-gray-700 size-[40px] rounded-full p-2 transition-all duration-500 ease-in-out hover:bg-darkBlue hover:text-white"
-                            >
+                        >
                             &gt;
                         </button>
                     </div>
