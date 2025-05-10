@@ -115,7 +115,7 @@ export const ProductSection = () => {
 
                     {/* Pagination Dots */}
                     <div className="flex justify-center gap-2 mt-4">
-                        {products.map((_, index) => (
+                        {products.slice(0, 5).map((_, index) => (
                             <span
                                 key={index}
                                 className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeIndex ? 'bg-white' : 'bg-gray-500'
