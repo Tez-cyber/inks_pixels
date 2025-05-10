@@ -124,8 +124,9 @@ export const AboutSection3 = () => {
       otherSection={
         <div className='flex flex-col gap-4 md:flex-row'>
           <div className="">
-            <div className='text-4xl pb-2 md:text-5xl'>
+            <div className='text-4xl flex gap-1 pb-2 md:text-5xl'>
               <Counter targetNumber={200} />
+              +
             </div>
             <span className='text-sm'>Clients served with dedication and creativity.</span>
           </div>
