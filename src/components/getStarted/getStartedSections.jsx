@@ -112,7 +112,7 @@ const MainForm = () => {
 
     return (
         <form
-            action="https://formsubmit.co/69713c2543292f8fb3ef95f074dfe9b5"
+            action="https://formsubmit.co/43f6506dfcb9b18c14f8c7574500fc35"
             method="POST"
             encType="multipart/form-data"
             className="space-y-6"
