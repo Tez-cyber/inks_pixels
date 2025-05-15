@@ -16,66 +16,7 @@ export const JumbotronSection = () => {
 
     return (
         <section className='bg-darkBlue w-full h-[916.31px] flex items-center justify-center overflow-hidden md:h-screen'>
-            <Container className="flex flex-col items-center w-full md:flex-row">
-                {/* ====== Description section ====== */}
-                <div className=' text-white bg-darkBlue flex flex-col gap-6 mt-[6rem] pb-[4rem] md:mt- md:w-[50%] lg:mt-0'>
-                    <h1 className="text-[28px] leading-[1.1] md:text-[36px] lg:text-[50px]">
-                        Empowering Your <br className='hidden md:block' />
-                        Brand with
-                        <span className='ml-3 text-gold'>Creative Excellence</span>
-                    </h1>
-                    <p className='w-[90%] md:text-[18px]'>
-                        At Ink and Pixels Nigeria, we transform your vision into reality through
-                        innovative design and branding solutions. Let us help you stand out in a
-                        crowded marketplace.
-                    </p>
-                    <div className='flex gap-3'>
-                        <Button
-                            size="md"
-                            variant="primary"
-                            href="/getstarted"
-                        >
-                            Get started
-                        </Button>
-                        <Button
-                            size="md"
-                            variant="secondary"
-                            href="/about"
-                        >
-                            Learn more
-                        </Button>
-                    </div>
-                </div>
-                {/* ===== Image Section */}
-                <div className='flex justify-center h-[460.31px] overflow-hidden md:h-auto md:w-[50%]'>
-                    <div className='grid grid-cols-2 gap-6'>
-                        {/* ==== First grid ==== */}
-                        <div>
-                            <div className=''>
-                                <img className={`${imgStyle}`} src={gridImage1} alt="gridImage1" />
-                            </div>
-                            <div className=''>
-                                <img className={`${imgStyle}`} src={gridImage3} alt="gridImage1" />
-                            </div>
-                            <div className=''>
-                                <img className={`${imgStyle}`} src={gridImage4} alt="gridImage1" />
-                            </div>
-                        </div>
-                        {/* ==== Second grid ==== */}
-                        <div className='-mt-14 md:mt-36'>
-                            <div className=''>
-                                <img className={`${imgStyle}`} src={gridImage5} alt="gridImage1" />
-                            </div>
-                            <div className=''>
-                                <img className={`${imgStyle}`} src={gridImage4} alt="gridImage1" />
-                            </div>
-                            <div className=''>
-                                <img className={`${imgStyle}`} src={gridImage6} alt="gridImage1" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Container>
+           
         </section>
     );
 };
