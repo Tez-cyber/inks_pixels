@@ -118,7 +118,7 @@ const MainForm = () => {
             className="space-y-6"
         >
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="http://localhost:5173/thankyou" />
+            <input type="hidden" name="_next" value="https://inks-pixels.vercel.app//thankyou" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="_honey" style={{ display: "none" }} />
             <input type="hidden" name="_subject" value="New submission for inks and pixels!" />

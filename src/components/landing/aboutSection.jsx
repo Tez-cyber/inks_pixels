@@ -132,7 +132,7 @@ export const AboutSection3 = () => {
           </div>
           <div className="">
             <div className='text-4xl flex gap-1 pb-2 md:text-5xl'>
-              <Counter targetNumber={500} />
+              <Counter targetNumber={1000} />
               +
             </div>
             <span className='text-sm'>Projects completed, each with unique flair.</span>
