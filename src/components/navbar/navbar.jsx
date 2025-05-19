@@ -13,8 +13,8 @@ export const Navbar = () => {
     }
     return (
         <nav
-            className={`bg-white sticky top-0
-                h-[60px] text-darkBlue z-10 
+            className={`bg-transparent absolute w-full top-0
+                h-[60px] text-white z-10 
             `}
         >
             <Container className="flex items-center justify-between py-2">
@@ -23,7 +23,7 @@ export const Navbar = () => {
                     <ul className="flex gap-10">
                         {
                             navLinks.map((link, i) => (
-                                <li className="transition-all duration-150 font-semibold hover:text-gold hover:-translate-y-1" key={i}>
+                                <li className="transition-all duration-150 font-semibold rounded-lg hover:-translate-y-1" key={i}>
                                     <Link to={link.link} className="">{link.name}</Link>                            </li>
                             ))
                         }

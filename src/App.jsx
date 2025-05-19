@@ -62,7 +62,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className='relative'>
       <Navbar />
       <Suspense fallback={<SuspenseFallback />}>
         <ScrollToTop />
