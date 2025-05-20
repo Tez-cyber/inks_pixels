@@ -13,11 +13,13 @@ export const Navbar = () => {
     }
     return (
         <nav
-            className={`bg-transparent absolute w-full top-0
-                h-[60px] text-white z-10 
+            className={`bg-transparent fixed w-full top-0
+                h-[60px] text-darkblue z-10 
             `}
         >
             <Container className="flex items-center justify-between py-2">
+                {/* ==== LOGO ==== */}
+                <Logo />
                 {/* Nav links */}
                 <section className="hidden md:block">
                     <ul className="flex gap-10">
@@ -29,8 +31,6 @@ export const Navbar = () => {
                         }
                     </ul>
                 </section>
-                {/* ==== LOGO ==== */}
-                <Logo />
                 {/* ==== CONTACT ==== */}
                 <section className="hidden md:block">
                     <Button
