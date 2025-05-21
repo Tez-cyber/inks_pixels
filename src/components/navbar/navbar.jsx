@@ -22,7 +22,7 @@ export const Navbar = () => {
     const lastYRef = useRef(0);
     useMotionValueEvent(scrollY, 'change', (y) => {
         const difference = y - lastYRef.current;
-         setIsAtTop(y <= 0);
+         setIsAtTop(y <= 10);
         if (Math.abs(difference) > 50) {
             setHideNav(difference > 0);
             lastYRef.current = y;
@@ -61,7 +61,7 @@ export const Navbar = () => {
         >
             <Container className="flex items-center justify-between py-2">
                 {/* ==== LOGO ==== */}
-                <Logo />
+                <Logo isAtTop={isAtTop} />
                 {/* Nav links */}
                 <section className="hidden md:block">
                     <ul className="flex gap-10">
