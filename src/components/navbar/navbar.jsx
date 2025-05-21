@@ -1,19 +1,61 @@
 import { Link } from "react-router-dom";
-import { Button } from "../button";
-import { useState } from "react";
-import { MobileNavbar } from "./mobileNavbar";
+import { useState, useRef } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+
 import { navLinks } from "../../utils";
+import { MobileNavbar } from "./mobileNavbar";
 import { Container } from "../container";
 import { Logo } from "../logo";
+import { Button } from "../button";
 
 export const Navbar = () => {
     const [openNav, setOpenNav] = useState(false)
+    const [hideNav, setHideNav] = useState(false)
+    const [isAtTop, setIsAtTop] = useState(true);
+
     const handleMenuClick = () => {
         setOpenNav(!openNav)
     }
+
+
+    const { scrollY } = useScroll();
+    const lastYRef = useRef(0);
+    useMotionValueEvent(scrollY, 'change', (y) => {
+        const difference = y - lastYRef.current;
+         setIsAtTop(y <= 0);
+        if (Math.abs(difference) > 50) {
+            setHideNav(difference > 0);
+            lastYRef.current = y;
+        }
+    })
+
+    // NAVBAR SLIDE IN
+    const navSlideIn = {
+        start: {
+            y: "-100%",
+            opacity: 0
+        },
+        anim: {
+            y: 0,
+            opacity: 1
+        },
+        exit: {
+            y: "100%"
+        },
+        hidden: {
+            y: "-100%",
+        },
+    }
     return (
-        <nav
-            className={`bg-transparent fixed w-full top-0
+        <motion.nav
+            variants={navSlideIn}
+            initial="start"
+            animate={hideNav ? "hidden" : "anim"}
+            exit="exit"
+            transition={{
+                duration: .75
+            }}
+            className={`${isAtTop ? "bg-transparent" : "bg-darkBlue text-white"} fixed w-full top-0
                 h-[60px] text-darkblue z-10 
             `}
         >
@@ -61,7 +103,7 @@ export const Navbar = () => {
                     }
                 </section>
             </Container>
-        </nav>
+        </motion.nav>
 
     )
 }
