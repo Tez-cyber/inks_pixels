@@ -3,15 +3,20 @@ import { motion } from "framer-motion";
 
 import { Button } from "../button";
 import { Container } from "../container";
+import jumbo1 from "../../assets/img-2.jpg";
+import jumbo2 from "../../assets/img-4.jpg";
+import jumbo3 from "../../assets/img-6.jpg";
 
 export const JumbotronSection = () => {
+  const imgStyles = "h-[250px] w-[340px] object-cover rounded-2xl";
+
   let spanArray = [];
   for (let i = 1; i < 4; i++) {
     spanArray.push(i);
   }
   return (
-    <section className="bg-veryLightBlue">
-      <div className="h-screen">
+    <section className="bg-veryLightBlue pb-20">
+      <div className="">
         <Container className="pt-[40%] flex flex-col items-center text-center md:pt-[10%]">
           {/* Top span */}
           <div className="bg-darkBlue w-fit text-nowrap text-veryLightBlue rounded-2xl py-1 px-3 flex items-center gap-2">
@@ -42,10 +47,25 @@ export const JumbotronSection = () => {
             size="sm"
             variant="darkPrimary"
             href="/getstarted"
-            className={`z-10 mt-5 text-xl px-10 !rounded-3xl !border-0 hover:!bg-transparent hover:!border-2 hover:!border-darkBlue`}
+            className={`z-10 mt-5 text-xl px-10 !py-2 !rounded-3xl !border-0 hover:!bg-transparent hover:!border-2 hover:!border-darkBlue`}
           >
             Get started
           </Button>
+
+          {/* Image section */}
+          <div className="flex justify-between w-full mt-14">
+            <img
+              src={jumbo1}
+              alt=""
+              className={`${imgStyles} transform rotate-6`}
+            />
+            <img src={jumbo2} alt="" className={`${imgStyles} mt-5`} />
+            <img
+              src={jumbo3}
+              alt=""
+              className={`${imgStyles} transform -rotate-6`}
+            />
+          </div>
         </Container>
       </div>
     </section>
