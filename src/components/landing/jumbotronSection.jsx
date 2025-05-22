@@ -8,7 +8,7 @@ import jumbo2 from "../../assets/img-4.jpg";
 import jumbo3 from "../../assets/img-6.jpg";
 
 export const JumbotronSection = () => {
-  const imgStyles = "h-[250px] w-[340px] object-cover rounded-2xl";
+  const imgStyles = "object-cover rounded-2xl md:h-[250px] md:w-[300px] lg:w-[340px]";
 
   let spanArray = [];
   for (let i = 1; i < 4; i++) {
@@ -17,7 +17,7 @@ export const JumbotronSection = () => {
   return (
     <section className="bg-veryLightBlue pb-20">
       <div className="">
-        <Container className="pt-[40%] flex flex-col items-center text-center md:pt-[10%]">
+        <Container className="pt-[150px] flex flex-col items-center text-center md:pt-[20%] lg:pt-[10%]">
           {/* Top span */}
           <div className="bg-darkBlue w-fit text-nowrap text-veryLightBlue rounded-2xl py-1 px-3 flex items-center gap-2">
             <div className="flex">
@@ -32,9 +32,9 @@ export const JumbotronSection = () => {
           </div>
 
           {/* Main Title */}
-          <div className="mt-10 text-4xl font-semibold leading-[1.3] text-center md:text-7xl">
-            <p className="text-slate-500">Empowering Your Brand with</p>
-            <p className="text-darkBlue text-nowrap ">Creative Excellence</p>
+          <div className="mt-10 text-4xl font-semibold leading-[1.3] text-center md:text-5xl lg:text-7xl">
+            <p className="text-slate-500 md:text-nowrap">Empowering Your Brand with</p>
+            <p className="text-darkBlue">Creative Excellence</p>
           </div>
 
           {/* Desc */}
@@ -53,17 +53,17 @@ export const JumbotronSection = () => {
           </Button>
 
           {/* Image section */}
-          <div className="flex justify-between w-full mt-14">
+          <div className="flex justify-center w-full p-5 mt-14 md:p-0 md:justify-between">
             <img
               src={jumbo1}
               alt=""
-              className={`${imgStyles} transform rotate-6`}
+              className={`${imgStyles} hidden transform rotate-6 md:block`}
             />
-            <img src={jumbo2} alt="" className={`${imgStyles} mt-5`} />
+            <img src={jumbo2} alt="" className={`${imgStyles} md:mt-5 md:hidden lg:block`} />
             <img
               src={jumbo3}
               alt=""
-              className={`${imgStyles} transform -rotate-6`}
+              className={`${imgStyles} hidden transform -rotate-6 md:block`}
             />
           </div>
         </Container>
