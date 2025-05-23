@@ -67,7 +67,7 @@ export const Navbar = () => {
                     <ul className="flex gap-10">
                         {
                             navLinks.map((link, i) => (
-                                <li className="transition-all duration-150 font-semibold rounded-lg hover:-translate-y-1" key={i}>
+                                <li className="transition-all duration-150 uppercase rounded-lg hover:-translate-y-1" key={i}>
                                     <Link to={link.link} className="">{link.name}</Link>                            </li>
                             ))
                         }
