@@ -5,6 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { Navbar } from "./components/navbar/navbar";
 import { Footer } from "./components/footer";
 import ThankYouPage from './pages/ThankYouPage';
+import ProductsPage from './pages/ProductsPage';
 
 // Use React.memo for components that don't need to update on every render
 const LandingPage = React.memo(React.lazy(() => import("./pages/LandingPage")));
@@ -12,7 +13,6 @@ const AboutPage = React.memo(React.lazy(() => import("./pages/AboutPage")));
 const GetStartedPage = React.memo(React.lazy(() => import("./pages/GetStartedPage")));
 const ServicesPage = React.memo(React.lazy(() => import("./pages/ServicesPage")));
 
-// Optimized ScrollToTop component using useLayoutEffect and route change detection
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -53,8 +53,7 @@ function App() {
           polyfill();
           console.log('Smoothscroll polyfill loaded');
         } catch (error) {
-          console.error("Failed to load smoothscroll-polyfill:", error);
-          // Optionally, you could provide a user-friendly message here
+          console.error("Failed to load smoothscroll-polyfill:", error);  
         }
       }
     };
@@ -72,6 +71,7 @@ function App() {
           <Route path="/getstarted" element={<GetStartedPage />} />
           <Route path="/thankyou" element={<ThankYouPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/products" element={<ProductsPage />} />
         </Routes>
       </Suspense>
       <Footer />
