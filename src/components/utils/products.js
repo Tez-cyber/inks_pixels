@@ -48,3 +48,25 @@ export const products = [
         price: "5,000",
     },
 ]
+
+
+export const productsCategories = [
+    {
+        category: "Brand Essentials"
+    },
+    {
+        category: "Promotional & Marketing Collateral"
+    },
+    {
+        category: "Apparel & Wearables"
+    },
+    {
+        category: "Corporate Identity Tools"
+    },
+    {
+        category: "Packaging"
+    },
+    {
+        category: "Events & Occasions"
+    },
+]

@@ -2,9 +2,9 @@ import { Button } from "../button";
 
 export const ProductsComponent = () => {
   return (
-    <section className="h-screen bg-veryLightBlue md:pt-[20%] lg:pt-[5%]">
+    <section className="bg-veryLightBlue md:pt-[20%] lg:pt-[5%]">
       {/* Products top section */}
-      <header className="bg-lightBlue/20 py-10 flex items-center justify-between sticky top-0 px-20">
+      <header className="bg-[#b2b2bf] py-10 flex items-center justify-between sticky top-0 z-2 px-20">
         {/* First section */}
         <div>
           <p>
@@ -39,9 +39,19 @@ export const ProductsComponent = () => {
 const ProductsMain = () => {
 
     return (
-        <section>
-            <div className=""></div>
-            <div className=""></div>
+        <section className="px-20 py-5 flex gap-3 ">
+            <div className="w-[300px]">
+                <span className="uppercase text-lg font-semibold">categories</span>
+                <span className="bg-darkBlue w-full h-1 rounded-2xl block"></span>
+            </div>
+            <div className="grid grid-cols-3 gap-5">
+                <span className="w-[250px] h-[200px] block bg-lightBlue"></span>
+                <span className="w-[250px] h-[200px] block bg-lightBlue"></span>
+                <span className="w-[250px] h-[200px] block bg-lightBlue"></span>
+                <span className="w-[250px] h-[200px] block bg-lightBlue"></span>
+                <span className="w-[250px] h-[200px] block bg-lightBlue"></span>
+                <span className="w-[250px] h-[200px] block bg-lightBlue"></span>
+            </div>
         </section>
     )
 }
