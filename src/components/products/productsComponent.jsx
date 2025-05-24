@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams, Link } from "react-router-dom";
 import { Button } from "../button";
 import { productsCategories, products } from "../utils/products";
+import { h1, p } from "framer-motion/client";
 
 export const ProductsComponent = () => {
   return (
@@ -41,6 +42,10 @@ export const ProductsComponent = () => {
 };
 
 const ProductsDisplay = () => {
+  const location = useLocation();
+  const params = useParams();
+  console.log(params)
+
   return (
     <div className="flex flex-1 relative">
       {/* Sidebar  */}
@@ -53,36 +58,42 @@ const ProductsDisplay = () => {
             <span className="bg-darkBlue w-10 h-1 rounded-2xl"></span>
           </div>
           <div className="space-y-2">
-            {productsCategories.map((category, i) => (
-              <div key={i} className="group transition-all duration-200">
-                <p
-                  className="
-            cursor-pointer px-4 py-3 rounded-lg
-            text-gray-700 font-medium
-            group-hover:bg-lightBlue/50 group-hover:text-white
-            transition-all duration-200
-            flex items-center
-          "
-                >
-                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-darkBlue transition-all duration-200"></span>
-                  {category.category}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 text-darkBlue transition-all duration-200"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+            {productsCategories.map((category, i) => {
+              const isActive = category.category === params.category;
+              return (
+                <div key={i} className="group transition-all duration-200">
+                  <p
+                    className={`
+                  cursor-pointer px-4 py-3 rounded-lg
+                  text-gray-700 font-medium ${isActive ? "bg-lightBlue/50 text-white" : ""}
+                  group-hover:bg-lightBlue/50 group-hover:text-white
+                  transition-all duration-200
+                  flex items-center
+                `}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </p>
-              </div>
-            ))}
+                    <span className={`w-2 h-2 ${isActive ? "bg-darkBlue" : "bg-gray-400"} rounded-full mr-3 group-hover:bg-darkBlue transition-all duration-200`}></span>
+                    {/*  */}
+                    <Link to={`/products/${category.category}`}>
+                      {category.category}
+                    </Link>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`h-4 w-4 ml-auto group-hover:opacity-100 ${isActive ? "text-darkBlue" : ""} transition-all duration-200`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke={isActive ? "#000029" : ""}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -98,28 +109,31 @@ const ProductsGrid = () => {
   const hasCategory = "category" in params;
   return (
     <div className="flex-1 p-5">
+      {
+        hasCategory ? (
+          <h1 className="uppercase font-semibold">{params.category}</h1>
+        ) : (
+          ""
+        )
+      }
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {
-          hasCategory ? (
-            <>
-              product category
-            </>
-          ) : (
-            products.map((product) => (
-              <div key={product.id} className="">
-                <img
-                  src={product.img}
-                  alt={product.title}
-                  className="h-[200px] rounded-2xl w-full object-cover transition-transform duration-500"
-                />
-                <div className="p-4">
-                  <h2 className="text-darkBlue font-semibold">{product.title}</h2>
-                  <p className="text-sm">&#8358; {product.price}</p>
-                </div>
+        {hasCategory ? (
+          <></>
+        ) : (
+          products.map((product) => (
+            <div key={product.id} className="">
+              <img
+                src={product.img}
+                alt={product.title}
+                className="h-[200px] rounded-2xl w-full object-cover transition-transform duration-500"
+              />
+              <div className="p-4">
+                <h2 className="text-darkBlue font-semibold">{product.title}</h2>
+                <p className="text-sm">&#8358; {product.price}</p>
               </div>
-            ))
-          )
-        }
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
