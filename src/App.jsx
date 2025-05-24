@@ -72,6 +72,7 @@ function App() {
           <Route path="/thankyou" element={<ThankYouPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:category" element={<ProductsPage />} />
         </Routes>
       </Suspense>
       <Footer />
