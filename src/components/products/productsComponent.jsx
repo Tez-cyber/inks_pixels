@@ -118,7 +118,27 @@ const ProductsGrid = () => {
       }
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {hasCategory ? (
-          <></>
+          <>
+            {
+              productsCategories
+                .find((cat) => cat.category === params.category)
+                ?.subcategories.map((product, i) => (
+                  <div key={i} className="mt-5">
+                    <img
+                      src={product.img}
+                      alt={product.title}
+                      className="h-[200px] rounded-2xl w-full object-cover transition-transform duration-500"
+                    />
+                    <div className="p-4">
+                      <h2 className="text-darkBlue font-semibold">
+                        {product.title}
+                      </h2>
+                      <p className="text-sm">&#8358; {product.price}</p>
+                    </div>
+                  </div>
+                ))
+            }
+          </>
         ) : (
           products.map((product) => (
             <div key={product.id} className="">

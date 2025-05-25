@@ -52,21 +52,68 @@ export const products = [
 
 export const productsCategories = [
     {
-        category: "Brand Essentials"
+        category: "Brand Essentials",
+        subcategories: [
+            {
+                title: "Business Cards",
+                img: "/products_assets/bus_cards.jpg",
+                price: "5,000",
+            },
+            {
+                title: "Branded Letterheads",
+                img: "/products_assets/invoice.jpg",
+                price: "5,000",
+            },
+            {
+                title: "Branded Notepads & Jotters",
+                img: "/products_assets/jotter.jpg",
+                price: "5,000",
+            },
+            {
+                title: "Corporate Envelopes",
+                img: "/products_assets/jotter.jpg",
+                price: "5,000",
+            },
+            {
+                title: "Branded Diaries",
+                img: "/products_assets/jotter.jpg",
+                price: "5,000",
+            },
+            {
+                title: "Presentation Folders",
+                img: "/products_assets/jotter.jpg",
+                price: "5,000",
+            },
+            {
+                title: "Memo Pads",
+                img: "/products_assets/jotter.jpg",
+                price: "5,000",
+            },
+            {
+                title: "Desk Calendars",
+                img: "/products_assets/jotter.jpg",
+                price: "5,000",
+            }
+        ]
     },
     {
-        category: "Promotional & Marketing Collateral"
+        category: "Promotional & Marketing Collateral",
+        subcategories: []
     },
     {
-        category: "Apparel & Wearables"
+        category: "Apparel & Wearables",
+        subcategories: []
     },
     {
-        category: "Corporate Identity Tools"
+        category: "Corporate Identity Tools",
+        subcategories: []
     },
     {
-        category: "Packaging"
+        category: "Packaging",
+        subcategories: []
     },
     {
-        category: "Events & Occasions"
+        category: "Events & Occasions",
+        subcategories: []
     },
 ]
