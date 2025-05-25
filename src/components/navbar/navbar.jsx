@@ -77,10 +77,10 @@ export const Navbar = () => {
                 <section className="hidden md:block">
                     <Button
                         size="sm"
-                        variant="primary"
+                        variant="darkPrimary"
                         href="/getstarted"
                     >
-                        Contact
+                        Get Started
                     </Button>
                 </section>
 
