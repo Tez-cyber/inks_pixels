@@ -1,12 +1,13 @@
-import { useLocation, useParams, Link } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { Button } from "../button";
 import { productsCategories, products } from "../utils/products";
 
+// Parent component for Products page
 export const ProductsComponent = () => {
   return (
     <div className="bg-veryLightBlue pt-[60px] flex flex-col min-h-screen">
       {/* Products top section - sticky header */}
-      <header className="bg-[#b2b2bf] py-10 flex flex-col justify-between sticky top-0 z-20 px-5 md:items-center md:px-20 md:flex-row">
+      <header className="bg-[#b2b2bf] py-10 flex flex-col justify-between sticky top-0 z-10 px-5 md:items-center md:px-20 md:flex-row">
         <div>
           {/* Quick Nav */}
           <p>
@@ -49,9 +50,7 @@ export const ProductsComponent = () => {
 };
 
 const ProductsDisplay = () => {
-  const location = useLocation();
   const params = useParams();
-  console.log(params)
 
   return (
     <div className="flex flex-1 relative">
@@ -114,6 +113,15 @@ const ProductsDisplay = () => {
 const ProductsGrid = () => {
   const params = useParams();
   const hasCategory = "category" in params;
+
+  const navigate = useNavigate();
+  const handleProductDetailsRoute = (category, subcategory) => {
+    if (hasCategory) {
+      navigate(`/products/${category}/${subcategory}`);
+    } else {
+      navigate(`/products/${category}`);
+    }
+  }
   return (
     <div className="flex-1 p-5">
       {/* Title Display based of category click */}
@@ -138,7 +146,9 @@ const ProductsGrid = () => {
                       alt={product.title}
                       className="h-[200px] rounded-2xl w-full object-cover transition-transform duration-500"
                     />
-                    <div className="p-4 cursor-pointer">
+                    <div
+                      onClick={() => handleProductDetailsRoute(params.category, product.title)}
+                      className="p-4 cursor-pointer">
                       <h2 className="text-darkBlue font-semibold">
                         {product.title}
                       </h2>

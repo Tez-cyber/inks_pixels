@@ -2,7 +2,7 @@
 
 const ProductDetails = () => {
   return (
-    <div>productDetail</div>
+    <div className="pt-[60px] min-h-[50vh]">productDetail</div>
   )
 }
 
