@@ -8,9 +8,17 @@ export const ProductsComponent = () => {
       {/* Products top section - sticky header */}
       <header className="bg-[#b2b2bf] py-10 flex flex-col justify-between sticky top-0 z-20 px-5 md:items-center md:px-20 md:flex-row">
         <div>
+          {/* Quick Nav */}
           <p>
             <a href="/">Home</a>
-            <span className="text-darkBlue font-bold"> | Products</span>
+            <span className="text-darkBlue font-bold"> 
+              <span className="px-1">
+                | 
+              </span>
+              <Link to="/products">
+                Products
+              </Link>
+            </span>
           </p>
           <p className="text-4xl font-semibold leading-[1.3]">
             Explore All Products

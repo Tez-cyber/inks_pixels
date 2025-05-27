@@ -70,7 +70,7 @@ export const productsCategories = [
       },
       {
         title: "Corporate Envelopes",
-        img: "/products_assets/jotter.jpg",
+        img: "/products_assets/large-courier.webp",
         price: "5,000",
       },
       {
