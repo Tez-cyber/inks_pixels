@@ -2,12 +2,13 @@ import React, { Suspense, useLayoutEffect, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CircularProgress from '@mui/material/CircularProgress';
+
 import { Navbar } from "./components/navbar/navbar";
 import { Footer } from "./components/footer";
 import ThankYouPage from './pages/ThankYouPage';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetails from './components/products/productDetails';
 
-// Use React.memo for components that don't need to update on every render
 const LandingPage = React.memo(React.lazy(() => import("./pages/LandingPage")));
 const AboutPage = React.memo(React.lazy(() => import("./pages/AboutPage")));
 const GetStartedPage = React.memo(React.lazy(() => import("./pages/GetStartedPage")));
@@ -44,7 +45,7 @@ const SuspenseFallback = () => {
 
 function App() {
   useEffect(() => {
-    const applySmoothScroll = async () => { // Encapsulate the logic
+    const applySmoothScroll = async () => {
       if ('scrollBehavior' in document.documentElement.style) {
         document.documentElement.style.scrollBehavior = 'smooth';
       } else {
@@ -73,6 +74,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:category" element={<ProductsPage />} />
+          <Route path="/products/:category/:subcategory" element={<ProductDetails />} />
         </Routes>
       </Suspense>
       <Footer />
