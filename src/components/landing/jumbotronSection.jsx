@@ -8,14 +8,14 @@ import jumbo2 from "../../assets/img-4.jpg";
 import jumbo3 from "../../assets/img-6.jpg";
 
 export const JumbotronSection = () => {
-  const imgStyles = "object-cover rounded-2xl md:h-[250px] md:w-[300px] lg:w-[340px]";
+  const imgStyles = "object-cover rounded-2xl h-[300px] md:h-[250px] md:w-[300px] lg:w-[340px]";
 
   let spanArray = [];
   for (let i = 1; i < 4; i++) {
     spanArray.push(i);
   }
   return (
-    <section className="bg-veryLightBlue pb-20">
+    <section className="bg-veryLightBlue md:pb-20">
       <div className="">
         <Container className="pt-[150px] flex flex-col items-center text-center md:pt-[20%] lg:pt-[10%]">
           {/* Top span */}
@@ -47,7 +47,7 @@ export const JumbotronSection = () => {
             size="sm"
             variant="darkPrimary"
             href="/getstarted"
-            className={`z-10 mt-5 text-xl px-10 !py-2 !rounded-3xl !border-0 hover:!bg-transparent hover:!border-2 hover:!border-darkBlue`}
+            className={`mt-5 text-xl px-10 !py-2 !rounded-3xl !border-0 hover:!bg-transparent hover:!border-2 hover:!border-darkBlue`}
           >
             Get started
           </Button>

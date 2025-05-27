@@ -19,7 +19,7 @@ const listItemVariants = {
 export const MobileNavbar = ({ onCloseNav }) => {
   return (
     <motion.nav
-      className='h-screen w-screen fixed top-0 bg-lightBlue z-[-10] inset-0 overflow-hidden'
+      className='h-screen w-screen sticky top-0 bg-darkBlue inset-0 overflow-hidden'
       variants={mobileNavbarVariants}
       initial="closed"
       animate="open"
